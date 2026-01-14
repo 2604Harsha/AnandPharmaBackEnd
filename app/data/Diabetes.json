@@ -1,0 +1,2120 @@
+{
+  "product":{
+  "tablets": [
+    {
+      "id": 1,
+      "name": "Metformin 500mg",
+      "description": "First-line treatment for Type 2 diabetes that improves insulin sensitivity.",
+      "medicine_type": "Biguanide",
+      "uses": ["Type 2 Diabetes", "Insulin Resistance"],
+      "images": "/assets/DiabetesCare/metformin.png",
+      "cost": 85,
+      "discount": 10,
+      "final_price": 76.5,
+      "manufacturer": "USV",
+      "stock": 200,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Use as prescribed by diabetologist.",
+        "usage_instruction": "Take 1 tablet after food."
+      },
+
+      "brand": "Medicare Diabetes",
+      "material_type_free": "Chemical based formulation",
+      "ingredients": ["Metformin Hydrochloride"],
+      "bio_friendly": "Yes",
+      "net_quantity": "10 tablets",
+      "weight": "10 tablets",
+      "packaging_type": "Strip",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB2025-001",
+      "manufactured_by": "Medicare Labs Pvt Ltd",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 2,
+      "name": "Glimepiride 2mg",
+      "description": "Sulfonylurea that helps the pancreas release more insulin.",
+      "medicine_type": "Sulfonylurea",
+      "uses": ["High Blood Sugar"],
+      "images": "/assets/DiabetesCare/glimepiride.png",
+      "cost": 55,
+      "discount": 12,
+      "final_price": 48.4,
+      "manufacturer": "Sanofi",
+      "stock": 180,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "May cause hypoglycemia.",
+        "usage_instruction": "Take 30 minutes before breakfast."
+      },
+
+      "brand": "Medicare Diabetes",
+      "material_type_free": "Chemical",
+      "ingredients": ["Glimepiride"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB2025-001",
+      "manufactured_by": "Sanofi India",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 3,
+      "name": "Sitagliptin 100mg",
+      "description": "DPP-4 inhibitor that helps regulate blood sugar without weight gain.",
+      "medicine_type": "DPP-4 Inhibitor",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/sitagliptin-100.png",
+      "cost": 620,
+      "discount": 10,
+      "final_price": 558,
+      "manufacturer": "Merck",
+      "stock": 130,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (7 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "USA"
+      },
+
+      "information": {
+        "disclaimer": "Safe for long-term use.",
+        "usage_instruction": "1 tablet daily or as advised."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Sitagliptin"],
+      "net_quantity": "7 tablets",
+      "packaging_type": "Strip",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "MSD Pharma",
+      "country_of_origin": "USA"
+    },
+
+    {
+      "id": 4,
+      "name": "Dapagliflozin 10mg",
+      "description": "SGLT2 inhibitor that removes excess glucose via urine.",
+      "medicine_type": "SGLT2 Inhibitor",
+      "uses": ["Type 2 Diabetes", "Weight Reduction"],
+      "images": "/assets/DiabetesCare/dapagliflozin.png",
+      "cost": 280,
+      "discount": 10,
+      "final_price": 252,
+      "manufacturer": "AstraZeneca",
+      "stock": 150,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "36 months",
+        "country_of_origin": "UK"
+      },
+
+      "information": {
+        "disclaimer": "Monitor kidney function regularly.",
+        "usage_instruction": "Take in the morning."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Dapagliflozin"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+
+      "seller_name": "Medicare Diabetes Store",
+      "manufactured_by": "AstraZeneca Pharma",
+      "country_of_origin": "UK"
+    },
+
+    {
+      "id": 5,
+      "name": "Voglibose 0.3mg",
+      "description": "Controls post-meal sugar spikes.",
+      "medicine_type": "Alpha Glucosidase Inhibitor",
+      "uses": ["Post Meal Diabetes"],
+      "images": "/assets/DiabetesCare/voglibose.png",
+      "cost": 95,
+      "discount": 10,
+      "final_price": 85.5,
+      "manufacturer": "Lupin",
+      "stock": 160,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "May cause mild gas.",
+        "usage_instruction": "Take before food."
+      },
+
+      "ingredients": ["Voglibose"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+
+      "manufactured_by": "Lupin Pharma",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 6,
+      "name": "Vildagliptin 50mg",
+      "description": "DPP-4 inhibitor that improves pancreas response.",
+      "medicine_type": "DPP-4 Inhibitor",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/vildagliptin.png",
+      "cost": 210,
+      "discount": 10,
+      "final_price": 189,
+      "manufacturer": "Novartis",
+      "stock": 120,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (15 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Switzerland"
+      },
+
+      "information": {
+        "disclaimer": "Monitor sugar weekly.",
+        "usage_instruction": "1 tablet daily."
+      },
+
+      "ingredients": ["Vildagliptin"],
+      "packaging_type": "Strip",
+
+      "manufactured_by": "Novartis Pharma",
+      "country_of_origin": "Switzerland"
+    },
+
+    {
+      "id": 7,
+      "name": "Teneligliptin 20mg",
+      "description": "Cost-effective DPP-4 inhibitor used once daily.",
+      "medicine_type": "DPP-4 Inhibitor",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/teneligliptin.png",
+      "cost": 130,
+      "discount": 10,
+      "final_price": 117,
+      "manufacturer": "Cipla",
+      "stock": 190,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Safe for long-term use.",
+        "usage_instruction": "Take once daily."
+      },
+
+      "ingredients": ["Teneligliptin"],
+      "packaging_type": "Strip",
+
+      "manufacturer": "Cipla",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 8,
+      "name": "Pioglitazone 15mg",
+      "description": "Improves insulin sensitivity in peripheral tissues.",
+      "medicine_type": "Thiazolidinedione",
+      "uses": ["Insulin Resistance"],
+      "images": "/assets/DiabetesCare/pioglitazone.png",
+      "cost": 70,
+      "discount": 10,
+      "final_price": 63,
+      "manufacturer": "Zydus",
+      "stock": 250,
+      "rating": 4.5,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "36 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Not recommended for heart failure patients.",
+        "usage_instruction": "Take daily at night."
+      },
+
+      "ingredients": ["Pioglitazone"],
+      "packaging_type": "Strip",
+
+      "manufacturer": "Zydus Healthcare",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 9,
+      "name": "Empagliflozin 10mg",
+      "description": "SGLT2 inhibitor that reduces glucose reabsorption.",
+      "medicine_type": "SGLT2 Inhibitor",
+      "uses": ["Diabetes", "Heart Protection"],
+      "images": "/assets/DiabetesCare/empagliflozin.png",
+      "cost": 330,
+      "discount": 10,
+      "final_price": 297,
+      "manufacturer": "Boehringer",
+      "stock": 110,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Germany"
+      },
+
+      "information": {
+        "disclaimer": "Drink plenty of fluids.",
+        "usage_instruction": "Take in the morning."
+      },
+
+      "ingredients": ["Empagliflozin"],
+      "packaging_type": "Strip",
+
+      "manufactured_by": "Boehringer Pharma",
+      "country_of_origin": "Germany"
+    },
+
+    {
+      "id": 10,
+      "name": "Glimipride + Metformin",
+      "description": "Combination therapy for improved glycemic control.",
+      "medicine_type": "Combo (Sulfonylurea + Biguanide)",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/glime-met.png",
+      "cost": 150,
+      "discount": 10,
+      "final_price": 135,
+      "manufacturer": "Sun Pharma",
+      "stock": 140,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (15 tablets)",
+        "shelf_life": "36 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Monitor sugar regularly.",
+        "usage_instruction": "Take with breakfast."
+      },
+
+      "ingredients": ["Glimepiride", "Metformin"],
+      "packaging_type": "Strip",
+
+      "manufactured_by": "Sun Pharmaceutical",
+      "country_of_origin": "India"
+    }
+  ],
+
+  "insulin": [
+    {
+      "id": 1,
+      "name": "Actrapid HM 40IU",
+      "description": "Fast-acting human insulin used to control sugar levels during meals.",
+      "medicine_type": "Fast Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/actrapid.png",
+      "cost": 310,
+      "discount": 8,
+      "final_price": 285.2,
+      "manufacturer": "Novo Nordisk",
+      "stock": 120,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 vial (10ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Denmark"
+      },
+
+      "information": {
+        "disclaimer": "Use only with doctor’s prescription.",
+        "usage_instruction": "Inject 30 minutes before meals."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Regular Human Insulin"],
+      "net_quantity": "10ml",
+      "weight": "10ml",
+      "packaging_type": "Vial",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Center",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-INS-001",
+      "manufactured_by": "Novo Nordisk A/S",
+      "country_of_origin": "Denmark"
+    },
+
+    {
+      "id": 2,
+      "name": "Humalog 100IU KwikPen",
+      "description": "Rapid-acting insulin used before meals to control sudden sugar spikes.",
+      "medicine_type": "Rapid Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Insulin-dependent Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/humalog.png",
+      "cost": 860,
+      "discount": 5,
+      "final_price": 817,
+      "manufacturer": "Eli Lilly",
+      "stock": 80,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Insulin Pen",
+        "pack_size": "1 prefilled pen (3ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "USA"
+      },
+
+      "information": {
+        "disclaimer": "Store in refrigerator (2–8°C).",
+        "usage_instruction": "Inject 15 minutes before food."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Lispro"],
+      "net_quantity": "3ml",
+      "packaging_type": "Pen",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Center",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-INS-001",
+      "manufactured_by": "Eli Lilly & Company",
+      "country_of_origin": "USA"
+    },
+
+    {
+      "id": 3,
+      "name": "Lantus Basaglar 100IU",
+      "description": "Long-acting basal insulin providing up to 24-hour glucose control.",
+      "medicine_type": "Long Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/lantus.png",
+      "cost": 980,
+      "discount": 8,
+      "final_price": 901.6,
+      "manufacturer": "Sanofi",
+      "stock": 95,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 pen cartridge (3ml)",
+        "shelf_life": "36 months",
+        "country_of_origin": "France"
+      },
+
+      "information": {
+        "disclaimer": "Do not freeze.",
+        "usage_instruction": "Inject once daily at the same time."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Glargine"],
+      "net_quantity": "3ml",
+      "packaging_type": "Cartridge",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Sanofi Aventis",
+      "country_of_origin": "France"
+    },
+
+    {
+      "id": 4,
+      "name": "Tresiba 100IU Flextouch",
+      "description": "Ultra-long acting insulin that provides over 42 hours of stable sugar control.",
+      "medicine_type": "Ultra Long Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/tresiba.png",
+      "cost": 1450,
+      "discount": 10,
+      "final_price": 1305,
+      "manufacturer": "Novo Nordisk",
+      "stock": 70,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Insulin Pen",
+        "pack_size": "1 pen (3ml)",
+        "shelf_life": "36 months",
+        "country_of_origin": "Denmark"
+      },
+
+      "information": {
+        "disclaimer": "Use once daily, any time of day.",
+        "usage_instruction": "Inject subcutaneously."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Degludec"],
+      "net_quantity": "3ml",
+      "packaging_type": "Pen",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Novo Nordisk",
+      "country_of_origin": "Denmark"
+    },
+
+    {
+      "id": 5,
+      "name": "Mixtard 30 100IU",
+      "description": "Premixed insulin containing 30% regular and 70% NPH insulin.",
+      "medicine_type": "Premixed Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/mixtard.png",
+      "cost": 530,
+      "discount": 6,
+      "final_price": 498.2,
+      "manufacturer": "Novo Nordisk",
+      "stock": 140,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 vial (10ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Denmark"
+      },
+
+      "information": {
+        "disclaimer": "Inspect visually for particles before use.",
+        "usage_instruction": "Inject 30 minutes before breakfast & dinner."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Regular", "NPH Insulin"],
+      "net_quantity": "10ml",
+      "packaging_type": "Vial",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Novo Nordisk",
+      "country_of_origin": "Denmark"
+    },
+
+    {
+      "id": 6,
+      "name": "Insugen-N 100IU",
+      "description": "Intermediate-acting NPH insulin for daily sugar control.",
+      "medicine_type": "Intermediate Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/insugen-n.png",
+      "cost": 470,
+      "discount": 5,
+      "final_price": 446.5,
+      "manufacturer": "Biocon",
+      "stock": 150,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 vial (10ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Rotate injection sites daily.",
+        "usage_instruction": "Inject once or twice daily."
+      },
+
+      "brand": "Medicare Diabetes",
+      "ingredients": ["NPH Human Insulin"],
+      "net_quantity": "10ml",
+      "packaging_type": "Vial",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Biocon Ltd",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 7,
+      "name": "Insulin Glargine Cartridge 100IU",
+      "description": "Long acting cartridge-based insulin for stable glucose control.",
+      "medicine_type": "Long Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/glargine-cart.png",
+      "cost": 930,
+      "discount": 8,
+      "final_price": 855.6,
+      "manufacturer": "Sanofi",
+      "stock": 85,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Cartridge",
+        "pack_size": "1 cartridge (3ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "France"
+      },
+
+      "information": {
+        "disclaimer": "Use with compatible insulin pens only.",
+        "usage_instruction": "Inject once daily."
+      },
+
+      "ingredients": ["Insulin Glargine"],
+      "packaging_type": "Cartridge",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Sanofi Aventis",
+      "country_of_origin": "France"
+    },
+
+    {
+      "id": 8,
+      "name": "Novorapid FlexPen 100IU",
+      "description": "Fast-acting insulin that works quickly after injection.",
+      "medicine_type": "Rapid Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/novorapid.png",
+      "cost": 850,
+      "discount": 8,
+      "final_price": 782,
+      "manufacturer": "Novo Nordisk",
+      "stock": 65,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Insulin Pen",
+        "pack_size": "1 pen (3ml)",
+        "shelf_life": "36 months",
+        "country_of_origin": "Denmark"
+      },
+
+      "information": {
+        "disclaimer": "Use 5–10 minutes before meals.",
+        "usage_instruction": "Inject subcutaneously."
+      },
+
+      "ingredients": ["Insulin Aspart"],
+      "packaging_type": "Pen",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Novo Nordisk",
+      "country_of_origin": "Denmark"
+    },
+
+    {
+      "id": 9,
+      "name": "Ryzodeg 70/30 Penfill",
+      "description": "Combination of rapid and long-acting insulin for flexible sugar control.",
+      "medicine_type": "Premix Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/ryzodeg.png",
+      "cost": 1350,
+      "discount": 10,
+      "final_price": 1215,
+      "manufacturer": "Novo Nordisk",
+      "stock": 50,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 pen cartridge (3ml)",
+        "shelf_life": "30 months",
+        "country_of_origin": "Denmark"
+      },
+
+      "information": {
+        "disclaimer": "Do not share insulin pens.",
+        "usage_instruction": "Inject once or twice daily."
+      },
+
+      "ingredients": ["Insulin Degludec", "Insulin Aspart"],
+      "packaging_type": "Cartridge",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Novo Nordisk",
+      "country_of_origin": "Denmark"
+    },
+
+    {
+      "id": 10,
+      "name": "Apidra Solostar 100IU",
+      "description": "Rapid-acting insulin that starts working within minutes.",
+      "medicine_type": "Rapid Acting Insulin",
+      "uses": ["Meal-time Sugar Control"],
+      "images": "/assets/DiabetesCare/apidra.png",
+      "cost": 870,
+      "discount": 10,
+      "final_price": 783,
+      "manufacturer": "Sanofi",
+      "stock": 75,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Insulin Pen",
+        "pack_size": "1 pen (3ml)",
+        "shelf_life": "36 months",
+        "country_of_origin": "France"
+      },
+
+      "information": {
+        "disclaimer": "Use under medical supervision.",
+        "usage_instruction": "Inject right before meals."
+      },
+
+      "ingredients": ["Insulin Glulisine"],
+      "packaging_type": "Pen",
+
+      "customer_support": "support@yourapp.com",
+      "manufactured_by": "Sanofi Aventis",
+      "country_of_origin": "France"
+    }
+  ],
+
+  "glucometer": [
+    {
+      "id": 1,
+      "name": "Accu-Chek Active Glucometer",
+      "description": "Fast, accurate blood glucose monitoring with 5-second results.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Blood Sugar Monitoring"],
+      "images": "/assets/DiabetesCare/accu-chek-active.png",
+      "cost": 1450,
+      "discount": 10,
+      "final_price": 1305,
+      "manufacturer": "Roche",
+      "stock": 240,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "Germany"
+      },
+
+      "information": {
+        "disclaimer": "Use only compatible strips.",
+        "usage_instruction": "Apply 1 small drop of blood to the strip."
+      },
+
+      "brand": "Accu-Chek",
+      "ingredients": [],
+      "bio_friendly": "Yes",
+      "net_quantity": "1 device",
+      "weight": "150g",
+      "packaging_type": "Box",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "DIAB2025HYD003",
+      "manufactured_by": "Roche Diagnostics",
+      "country_of_origin": "Germany"
+    },
+
+    {
+      "id": 2,
+      "name": "Dr. Morepen GlucoOne BG-03",
+      "description": "Affordable glucometer with reliable readings and fast results.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Glucose Tracking"],
+      "images": "/assets/DiabetesCare/morepen-bg03.png",
+      "cost": 899,
+      "discount": 15,
+      "final_price": 764.15,
+      "manufacturer": "Morepen",
+      "stock": 320,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips + Lancets",
+        "shelf_life": "30 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Clean device after use.",
+        "usage_instruction": "Insert strip and apply blood sample."
+      },
+
+      "brand": "Dr. Morepen",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "130g",
+      "packaging_type": "Box",
+
+      "seller_name": "Medicare Diabetes Store",
+      "manufactured_by": "Morepen Labs",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 3,
+      "name": "OneTouch Select Plus Simple",
+      "description": "Simple, no-setup meter with high accuracy for sugar monitoring.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Diabetes Monitoring"],
+      "images": "/assets/DiabetesCare/onetouch-select.png",
+      "cost": 1690,
+      "discount": 12,
+      "final_price": 1487.2,
+      "manufacturer": "LifeScan",
+      "stock": 150,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "USA"
+      },
+
+      "information": {
+        "disclaimer": "Use compatible test strips only.",
+        "usage_instruction": "Touch blood sample to strip for instant reading."
+      },
+
+      "brand": "OneTouch",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "160g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "LifeScan",
+      "country_of_origin": "USA"
+    },
+
+    {
+      "id": 4,
+      "name": "Contour Plus Glucometer",
+      "description": "High precision glucometer with second-chance sampling.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Blood Sugar Check"],
+      "images": "/assets/DiabetesCare/contour-plus.png",
+      "cost": 1550,
+      "discount": 10,
+      "final_price": 1395,
+      "manufacturer": "Ascensia",
+      "stock": 95,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 5 strips",
+        "shelf_life": "30 months",
+        "country_of_origin": "Japan"
+      },
+
+      "information": {
+        "disclaimer": "Check strip expiry before use.",
+        "usage_instruction": "Apply blood sample to edge of strip."
+      },
+
+      "brand": "Contour",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "145g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Ascensia Diabetes Care",
+      "country_of_origin": "Japan"
+    },
+
+    {
+      "id": 5,
+      "name": "BeatO Smart Glucometer",
+      "description": "Smartphone-connected glucometer with app-based tracking.",
+      "medicine_type": "Smart Glucometer",
+      "uses": ["Sugar Tracking", "Mobile Health Monitoring"],
+      "images": "/assets/DiabetesCare/beato.png",
+      "cost": 999,
+      "discount": 20,
+      "final_price": 799,
+      "manufacturer": "BeatO",
+      "stock": 220,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Smart Glucometer",
+        "pack_size": "Device + 20 test strips",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "App required for full functionality.",
+        "usage_instruction": "Connect via phone and insert test strip."
+      },
+
+      "brand": "BeatO",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "100g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Health Arx Technologies",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 6,
+      "name": "Dr Trust Glucometer Gold",
+      "description": "Advanced glucometer with painless strips and gold electrodes.",
+      "medicine_type": "Premium Glucometer",
+      "uses": ["Blood Sugar Monitoring"],
+      "images": "/assets/DiabetesCare/drtrust-gold.png",
+      "cost": 1799,
+      "discount": 10,
+      "final_price": 1619.1,
+      "manufacturer": "Dr Trust",
+      "stock": 180,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips + Lancets",
+        "shelf_life": "36 months",
+        "country_of_origin": "USA"
+      },
+
+      "information": {
+        "disclaimer": "Keep away from moisture.",
+        "usage_instruction": "Insert strip and apply blood sample."
+      },
+
+      "brand": "Dr Trust",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "155g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Dr Trust USA",
+      "country_of_origin": "USA"
+    },
+
+    {
+      "id": 7,
+      "name": "Accu-Chek Instant S",
+      "description": "Instant sugar monitoring with target range indicator.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Instant Sugar Check"],
+      "images": "/assets/DiabetesCare/accu-chek-instant.png",
+      "cost": 1790,
+      "discount": 12,
+      "final_price": 1575.2,
+      "manufacturer": "Roche",
+      "stock": 140,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "Germany"
+      },
+
+      "information": {
+        "disclaimer": "Replace battery when low.",
+        "usage_instruction": "Apply small drop of blood to strip."
+      },
+
+      "brand": "Accu-Chek",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "160g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Roche Diagnostics",
+      "country_of_origin": "Germany"
+    },
+
+    {
+      "id": 8,
+      "name": "OneTouch Verio Flex",
+      "description": "Bluetooth-enabled glucometer with color range indicator.",
+      "medicine_type": "Smart Glucometer",
+      "uses": ["Sugar Tracking", "Bluetooth Monitoring"],
+      "images": "/assets/DiabetesCare/onetouch-verio.png",
+      "cost": 2099,
+      "discount": 10,
+      "final_price": 1889.1,
+      "manufacturer": "LifeScan",
+      "stock": 70,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Bluetooth Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "USA"
+      },
+
+      "information": {
+        "disclaimer": "Sync with OneTouch App.",
+        "usage_instruction": "Insert strip → apply blood → view result."
+      },
+
+      "brand": "OneTouch",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "170g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "LifeScan",
+      "country_of_origin": "USA"
+    },
+
+    {
+      "id": 9,
+      "name": "Contour Plus Elite",
+      "description": "Premium glucometer with high accuracy and smart monitoring.",
+      "medicine_type": "Premium Glucometer",
+      "uses": ["Accurate Sugar Reading"],
+      "images": "/assets/DiabetesCare/contour-elite.png",
+      "cost": 1950,
+      "discount": 10,
+      "final_price": 1755,
+      "manufacturer": "Ascensia",
+      "stock": 60,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "30 months",
+        "country_of_origin": "Japan"
+      },
+
+      "information": {
+        "disclaimer": "Use before strip expiry date.",
+        "usage_instruction": "Apply blood sample to active tip."
+      },
+
+      "brand": "Contour",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "150g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Ascensia Diabetes Care",
+      "country_of_origin": "Japan"
+    },
+
+    {
+      "id": 10,
+      "name": "BeatO Curv Glucometer",
+      "description": "Compact, portable smartphone glucometer for on-the-go testing.",
+      "medicine_type": "Smart Mini Glucometer",
+      "uses": ["Mobile Sugar Tracking"],
+      "images": "/assets/DiabetesCare/beato-curv.png",
+      "cost": 799,
+      "discount": 15,
+      "final_price": 679.15,
+      "manufacturer": "BeatO",
+      "stock": 200,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Mini Smart Glucometer",
+        "pack_size": "Device + 20 strips",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Works only with BeatO App.",
+        "usage_instruction": "Insert into phone → insert strip → test."
+      },
+
+      "brand": "BeatO",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "90g",
+      "packaging_type": "Box",
+
+      "manufactured_by": "Health Arx Technologies",
+      "country_of_origin": "India"
+    }
+  ],
+
+  "syrups": [
+    {
+      "id": 1,
+      "name": "Diabetact Herbal Sugar Control Syrup",
+      "description": "Ayurvedic herbal syrup that supports natural blood sugar control and digestion.",
+      "medicine_type": "Herbal Sugar Control Syrup",
+      "uses": ["Type 2 Diabetes", "Blood Sugar Control"],
+      "images": "/assets/DiabetesCare/diabetact.png",
+      "cost": 180,
+      "discount": 10,
+      "final_price": 162,
+      "manufacturer": "Himalaya Wellness",
+      "stock": 200,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Syrup",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Not a replacement for diabetes medicines.",
+        "usage_instruction": "Take 10ml twice daily after meals."
+      },
+
+      "brand": "Himalaya",
+      "ingredients": ["Gudmar", "Vijaysar", "Karela", "Neem"],
+      "net_quantity": "200 ml",
+      "weight": "200 ml",
+      "packaging_type": "Bottle",
+
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "DIAB-SYRUP-001",
+      "manufactured_by": "Himalaya Drug Company",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 2,
+      "name": "SugarBalance Ayurvedic Syrup",
+      "description": "Helps control sugar levels naturally and improves metabolism.",
+      "medicine_type": "Herbal Syrup",
+      "uses": ["Sugar Control", "Metabolism Support"],
+      "images": "/assets/DiabetesCare/sugarbalance.png",
+      "cost": 160,
+      "discount": 8,
+      "final_price": 147.2,
+      "manufacturer": "Dabur",
+      "stock": 180,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Liquid Syrup",
+        "pack_size": "150 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Consult doctor if sugar levels fluctuate.",
+        "usage_instruction": "Take 2 teaspoons daily."
+      },
+
+      "brand": "Dabur",
+      "ingredients": ["Jambu Beej", "Gudmar", "Neem", "Karela"],
+      "net_quantity": "150 ml",
+      "packaging_type": "Bottle",
+
+      "seller_name": "Medicare Diabetes Store",
+      "manufactured_by": "Dabur India Ltd",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 3,
+      "name": "GlucoCare Sugar Management Syrup",
+      "description": "Formulated to support healthy sugar levels and appetite control.",
+      "medicine_type": "Ayurvedic Syrup",
+      "uses": ["Blood Sugar Control"],
+      "images": "/assets/DiabetesCare/glucocare.png",
+      "cost": 210,
+      "discount": 10,
+      "final_price": 189,
+      "manufacturer": "Patanjali",
+      "stock": 150,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Herbal Syrup",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Not a substitute for insulin.",
+        "usage_instruction": "Take 10 ml before meals."
+      },
+
+      "brand": "Patanjali",
+      "ingredients": ["Jamun Seed Extract", "Karela", "Neem", "Giloy"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Patanjali Ayurved Ltd",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 4,
+      "name": "Diabeta-H Syrup",
+      "description": "Helps maintain healthy blood sugar naturally with herbal ingredients.",
+      "medicine_type": "Health Syrup",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/diabeta-h.png",
+      "cost": 170,
+      "discount": 10,
+      "final_price": 153,
+      "manufacturer": "Baidhyanath",
+      "stock": 190,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Herbal",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "36 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Safe for long-term use.",
+        "usage_instruction": "Take 1 tablespoon twice daily."
+      },
+
+      "brand": "Baidhyanath",
+      "ingredients": ["Guduchi", "Karela", "Methi", "Neem"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Baidhyanath Ayurved",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 5,
+      "name": "Karela Jamun Syrup",
+      "description": "Traditional herbal remedy known for effective sugar control.",
+      "medicine_type": "Ayurvedic Syrup",
+      "uses": ["Blood Sugar Control"],
+      "images": "/assets/DiabetesCare/karela-jamun.png",
+      "cost": 120,
+      "discount": 10,
+      "final_price": 108,
+      "manufacturer": "Herbal Hills",
+      "stock": 220,
+      "rating": 4.5,
+
+      "highlights": {
+        "product_type": "Syrup",
+        "pack_size": "500 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Monitor blood sugar weekly.",
+        "usage_instruction": "Take 10-15 ml daily."
+      },
+
+      "brand": "Herbal Hills",
+      "ingredients": ["Karela", "Jamun Seed", "Neem"],
+      "net_quantity": "500 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Herbal Hills",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 6,
+      "name": "Diabocare Syrup",
+      "description": "Supports glucose metabolism and improves pancreatic health.",
+      "medicine_type": "Ayurvedic Syrup",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/diabocare.png",
+      "cost": 165,
+      "discount": 10,
+      "final_price": 148.5,
+      "manufacturer": "Charak Pharma",
+      "stock": 140,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Herbal Syrup",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "For supportive therapy.",
+        "usage_instruction": "Take 2 tsp after meals."
+      },
+
+      "brand": "Charak",
+      "ingredients": ["Gudmar", "Vijaysar", "Neem"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Charak Pharma Pvt Ltd",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 7,
+      "name": "GlycoHeal Syrup",
+      "description": "Herbal formulation that regulates blood sugar levels naturally.",
+      "medicine_type": "Herbal Supplement Syrup",
+      "uses": ["Glucose Regulation"],
+      "images": "/assets/DiabetesCare/glycoheal.png",
+      "cost": 190,
+      "discount": 12,
+      "final_price": 167.2,
+      "manufacturer": "Zandu",
+      "stock": 170,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Herbal",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "36 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Not to be taken on empty stomach.",
+        "usage_instruction": "Take 10 ml twice daily."
+      },
+
+      "brand": "Zandu",
+      "ingredients": ["Karela", "Jamun", "Neem", "Methi"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Zandu Care",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 8,
+      "name": "Jamun Karela Plus Syrup",
+      "description": "Combines Ayurvedic extracts to support pancreatic function.",
+      "medicine_type": "Ayurvedic Syrup",
+      "uses": ["Sugar Management"],
+      "images": "/assets/DiabetesCare/jamun-karela-plus.png",
+      "cost": 150,
+      "discount": 10,
+      "final_price": 135,
+      "manufacturer": "VedaPure",
+      "stock": 210,
+      "rating": 4.5,
+
+      "highlights": {
+        "product_type": "Syrup",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Shake well before use.",
+        "usage_instruction": "Take 2 spoons twice daily."
+      },
+
+      "brand": "VedaPure",
+      "ingredients": ["Jamun Pulp", "Karela Extract", "Giloy"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "VedaPure Naturals",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 9,
+      "name": "AyurSlim Diabetes Syrup",
+      "description": "Promotes sugar balance and supports weight management for diabetics.",
+      "medicine_type": "Health Syrup",
+      "uses": ["Diabetes Support"],
+      "images": "/assets/DiabetesCare/ayurslim.png",
+      "cost": 195,
+      "discount": 10,
+      "final_price": 175.5,
+      "manufacturer": "Himalaya",
+      "stock": 155,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Syrup",
+        "pack_size": "200 ml bottle",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Maintain diet alongside.",
+        "usage_instruction": "Take 1 tablespoon twice a day."
+      },
+
+      "brand": "Himalaya",
+      "ingredients": ["Fenugreek", "Karela", "Vijaysar"],
+      "net_quantity": "200 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Himalaya Drug Company",
+      "country_of_origin": "India"
+    },
+
+    {
+      "id": 10,
+      "name": "GlucoBalance Tonic",
+      "description": "A complete sugar support tonic that improves metabolism and energy.",
+      "medicine_type": "Tonic Syrup",
+      "uses": ["Type 2 Diabetes", "Metabolic Support"],
+      "images": "/assets/DiabetesCare/glucobalance.png",
+      "cost": 220,
+      "discount": 12,
+      "final_price": 193.6,
+      "manufacturer": "Vicco",
+      "stock": 200,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tonic",
+        "pack_size": "250 ml bottle",
+        "shelf_life": "36 months",
+        "country_of_origin": "India"
+      },
+
+      "information": {
+        "disclaimer": "Tonic only—does not cure diabetes.",
+        "usage_instruction": "Take 15 ml twice daily."
+      },
+
+      "brand": "Vicco",
+      "ingredients": ["Neem", "Jamun Seed", "Giloy", "Tulsi"],
+      "net_quantity": "250 ml",
+      "packaging_type": "Bottle",
+
+      "manufactured_by": "Vicco Laboratories",
+      "country_of_origin": "India"
+    }
+  ],
+  
+  "top_rated": [
+    {
+      "id": 1,
+      "name": "Metformin 500mg",
+      "description": "Highly trusted first-line oral tablet for Type 2 diabetes management.",
+      "medicine_type": "Biguanide Tablet",
+      "uses": ["Type 2 Diabetes", "Insulin Resistance"],
+      "images": "/assets/DiabetesCare/metformin-500.png",
+      "cost": 85,
+      "discount": 10,
+      "final_price": 76.5,
+      "manufacturer": "USV",
+      "stock": 220,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Consult your doctor before use.",
+        "usage_instruction": "Take one tablet after breakfast."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Metformin Hydrochloride"],
+      "net_quantity": "10 tablets",
+      "weight": "10 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP001",
+      "manufactured_by": "Medicare Labs Pvt Ltd",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 2,
+      "name": "Humalog 100IU KwikPen",
+      "description": "Top-rated rapid acting insulin pen for mealtime glucose spikes.",
+      "medicine_type": "Rapid Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Meal-time Sugar Control"],
+      "images": "/assets/DiabetesCare/Insulin/humalog.png",
+      "cost": 860,
+      "discount": 5,
+      "final_price": 817,
+      "manufacturer": "Eli Lilly",
+      "stock": 85,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Insulin Pen",
+        "pack_size": "1 pen (3ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "USA"
+      },
+      "information": {
+        "disclaimer": "Use under medical supervision.",
+        "usage_instruction": "Inject 15 minutes before food."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Lispro"],
+      "net_quantity": "3ml",
+      "packaging_type": "Pen",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP002",
+      "manufactured_by": "Eli Lilly & Company",
+      "country_of_origin": "USA"
+    },
+    {
+      "id": 3,
+      "name": "BeatO Curv Glucometer",
+      "description": "Highly rated smart glucometer with mobile app integration.",
+      "medicine_type": "Smart Glucometer",
+      "uses": ["Sugar Tracking", "Mobile Monitoring"],
+      "images": "/assets/DiabetesCare/Glucometer/beato-curv.png",
+      "cost": 799,
+      "discount": 15,
+      "final_price": 679.15,
+      "manufacturer": "BeatO",
+      "stock": 200,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 20 test strips",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Requires smartphone with app.",
+        "usage_instruction": "Insert into phone, insert strip, apply sample."
+      },
+      "brand": "BeatO",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "90g",
+      "packaging_type": "Box",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP003",
+      "manufactured_by": "Health Arx Technologies",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 4,
+      "name": "Lantus Insulin Glargine 100IU",
+      "description": "Top rated long-acting basal insulin for 24-hour coverage.",
+      "medicine_type": "Long Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/Insulin/lantus.png",
+      "cost": 980,
+      "discount": 8,
+      "final_price": 901.6,
+      "manufacturer": "Sanofi",
+      "stock": 90,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 cartridge (3ml)",
+        "shelf_life": "36 months",
+        "country_of_origin": "France"
+      },
+      "information": {
+        "disclaimer": "Store in fridge 2-8°C.",
+        "usage_instruction": "Inject once daily at same time."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Glargine"],
+      "net_quantity": "3ml",
+      "packaging_type": "Cartridge",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP004",
+      "manufactured_by": "Sanofi Aventis",
+      "country_of_origin": "France"
+    },
+    {
+      "id": 5,
+      "name": "Accu-Chek Active Glucometer",
+      "description": "Reliable meter known for its accuracy and easy use.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Blood Sugar Monitoring"],
+      "images": "/assets/DiabetesCare/Glucometer/accu-chek-active.png",
+      "cost": 1450,
+      "discount": 10,
+      "final_price": 1305,
+      "manufacturer": "Roche",
+      "stock": 250,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "Germany"
+      },
+      "information": {
+        "disclaimer": "Use only original strips for accurate results.",
+        "usage_instruction": "Insert strip → apply small blood sample."
+      },
+      "brand": "Accu-Chek",
+      "ingredients": [],
+      "net_quantity": "1 device",
+      "weight": "150g",
+      "packaging_type": "Box",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP005",
+      "manufactured_by": "Roche Diagnostics",
+      "country_of_origin": "Germany"
+    },
+    {
+      "id": 6,
+      "name": "Empagliflozin 10mg",
+      "description": "Top-rated SGLT2 inhibitor offering sugar control plus heart protection.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes", "Cardiovascular Protection"],
+      "images": "/assets/DiabetesCare/empagliflozin.png",
+      "cost": 330,
+      "discount": 10,
+      "final_price": 297,
+      "manufacturer": "Boehringer",
+      "stock": 110,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Germany"
+      },
+      "information": {
+        "disclaimer": "Drink ample water while using.",
+        "usage_instruction": "Take in morning."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Empagliflozin"],
+      "net_quantity": "10 tablets",
+      "weight": "10 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP006",
+      "manufactured_by": "Boehringer Pharma",
+      "country_of_origin": "Germany"
+    },
+    {
+      "id": 7,
+      "name": "Vildagliptin 50mg",
+      "description": "Highly rated DPP-4 inhibitor for type 2 diabetes management.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/vildagliptin.png",
+      "cost": 210,
+      "discount": 10,
+      "final_price": 189,
+      "manufacturer": "Novartis",
+      "stock": 130,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (15 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Switzerland"
+      },
+      "information": {
+        "disclaimer": "Monitor sugar levels after initiation.",
+        "usage_instruction": "One tablet daily or as advised."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Vildagliptin"],
+      "net_quantity": "15 tablets",
+      "weight": "15 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP007",
+      "manufactured_by": "Novartis Pharma",
+      "country_of_origin": "Switzerland"
+    },
+    {
+      "id": 8,
+      "name": "Loperamide 2mg",
+      "description": "Highly rated anti-diarrheal often used by diabetics during GI upset.",
+      "medicine_type": "Tablet",
+      "uses": ["Diarrhea", "Loose motion"],
+      "images": "/assets/DiabetesCare/loperamide.png",
+      "cost": 40,
+      "discount": 10,
+      "final_price": 36,
+      "manufacturer": "Sun Pharma",
+      "stock": 210,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (6 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Use only when necessary.",
+        "usage_instruction": "Take 1 tablet after each loose motion."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Loperamide"],
+      "net_quantity": "6 tablets",
+      "weight": "6 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP008",
+      "manufactured_by": "Sun Pharmaceutical Industries Ltd",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 9,
+      "name": "Teneligliptin 20mg",
+      "description": "Popular DPP-4 inhibitor with excellent rating for type-2 diabetes management.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/teneligliptin.png",
+      "cost": 130,
+      "discount": 10,
+      "final_price": 117,
+      "manufacturer": "Cipla",
+      "stock": 190,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Review sugar occasionally.",
+        "usage_instruction": "Take once daily."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Teneligliptin"],
+      "net_quantity": "10 tablets",
+      "weight": "10 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP009",
+      "manufactured_by": "Cipla Ltd",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 10,
+      "name": "Dapagliflozin 10mg",
+      "description": "Highly rated SGLT2 inhibitor for dual benefit of sugar and weight management.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes", "Weight Management"],
+      "images": "/assets/DiabetesCare/dapagliflozin.png",
+      "cost": 280,
+      "discount": 10,
+      "final_price": 252,
+      "manufacturer": "AstraZeneca",
+      "stock": 140,
+      "rating": 4.8,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "UK"
+      },
+      "information": {
+        "disclaimer": "Check kidney function periodically.",
+        "usage_instruction": "Take in the morning."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Dapagliflozin"],
+      "net_quantity": "10 tablets",
+      "weight": "10 tablets",
+      "packaging_type": "Strip",
+      "customer_support": "support@yourapp.com",
+      "seller_name": "Medicare Diabetes Store",
+      "seller_address": "123 Medical Street, Hyderabad, India",
+      "seller_license": "MED-DIAB-2025-TOP010",
+      "manufactured_by": "AstraZeneca Pharma",
+      "country_of_origin": "UK"
+    }
+  ],
+
+  "recommendations": [
+    {
+      "id": 1,
+      "name": "Metformin SR 500mg",
+      "description": "Extended-release version of metformin for simplicity and better tolerability.",
+      "medicine_type": "Tablet (SR)",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/metformin-sr.png",
+      "cost": 75,
+      "discount": 10,
+      "final_price": 67.5,
+      "manufacturer": "USV",
+      "stock": 180,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Not for use in patients with kidney issues without monitoring.",
+        "usage_instruction": "Take once daily after evening meal."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Metformin Hydrochloride"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+      "seller_name": "Medicare Diabetes Store",
+      "manufactured_by": "USV Ltd",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 2,
+      "name": "Gliclazide 80mg",
+      "description": "Recommended sulfonylurea for effective blood sugar reduction.",
+      "medicine_type": "Sulfonylurea Tablet",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/gliclazide.png",
+      "cost": 72,
+      "discount": 8,
+      "final_price": 66.24,
+      "manufacturer": "Sun Pharma",
+      "stock": 160,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Risk of hypoglycemia – monitor regularly.",
+        "usage_instruction": "Take 1 tablet before breakfast."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Gliclazide"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+      "manufacturer": "Sun Pharma",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 3,
+      "name": "Linagliptin 5mg",
+      "description": "Modern DPP-4 inhibitor with once-daily dosing and minimal dosing adjustment.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/linagliptin.png",
+      "cost": 450,
+      "discount": 10,
+      "final_price": 405,
+      "manufacturer": "Boehringer Ingelheim",
+      "stock": 120,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Germany"
+      },
+      "information": {
+        "disclaimer": "Requires occasional kidney check.",
+        "usage_instruction": "Take 1 tablet daily."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Linagliptin"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+      "manufactured_by": "Boehringer Ingelheim",
+      "country_of_origin": "Germany"
+    },
+    {
+      "id": 4,
+      "name": "Canagliflozin 100mg",
+      "description": "Recommendation for sugar control and cardiovascular benefit (SGLT2 inhibitor).",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes", "Heart Protection"],
+      "images": "/assets/DiabetesCare/canagliflozin.png",
+      "cost": 380,
+      "discount": 10,
+      "final_price": 342,
+      "manufacturer": "Janssen",
+      "stock": 90,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "USA"
+      },
+      "information": {
+        "disclaimer": "Check for leg swelling and kidney function.",
+        "usage_instruction": "Take once daily before breakfast."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Canagliflozin"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+      "manufactured_by": "Janssen Pharmaceuticals",
+      "country_of_origin": "USA"
+    },
+    {
+      "id": 5,
+      "name": "GlucoOne BG-03 Glucometer",
+      "description": "Recommended glucometer with accurate strips and digital display.",
+      "medicine_type": "Glucometer Device",
+      "uses": ["Blood Sugar Testing"],
+      "images": "/assets/DiabetesCare/Glucometer/glucoone-bg03.png",
+      "cost": 999,
+      "discount": 10,
+      "final_price": 899.1,
+      "manufacturer": "Dr Morepen",
+      "stock": 100,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 10 strips + Lancets",
+        "shelf_life": "30 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Keep strips in cool and dry place.",
+        "usage_instruction": "Insert test strip, apply drop of blood."
+      },
+      "brand": "GlucoOne",
+      "net_quantity": "1 device",
+      "weight": "140g",
+      "packaging_type": "Box",
+      "manufactured_by": "Morepen Labs Ltd",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 6,
+      "name": "Mixtard 30 100IU",
+      "description": "Recommended premixed insulin combination for daily use.",
+      "medicine_type": "Premixed Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/Insulin/mixtard.png",
+      "cost": 530,
+      "discount": 6,
+      "final_price": 498.2,
+      "manufacturer": "Novo Nordisk",
+      "stock": 130,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Injection",
+        "pack_size": "1 vial (10ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "Denmark"
+      },
+      "information": {
+        "disclaimer": "Use under medical guidance only.",
+        "usage_instruction": "Inject before breakfast & dinner."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Regular Insulin", "NPH Insulin"],
+      "net_quantity": "10ml",
+      "packaging_type": "Vial",
+      "manufactured_by": "Novo Nordisk A/S",
+      "country_of_origin": "Denmark"
+    },
+    {
+      "id": 7,
+      "name": "OneTouch Verio Flex",
+      "description": "Recommended Bluetooth-enabled glucometer for app integration.",
+      "medicine_type": "Smart Glucometer",
+      "uses": ["Blood Sugar Tracking", "Remote Monitoring"],
+      "images": "/assets/DiabetesCare/Glucometer/onetouch-verio.png",
+      "cost": 2099,
+      "discount": 10,
+      "final_price": 1889.1,
+      "manufacturer": "LifeScan",
+      "stock": 70,
+      "rating": 4.9,
+
+      "highlights": {
+        "product_type": "Smart Glucometer",
+        "pack_size": "Device + 10 strips",
+        "shelf_life": "36 months",
+        "country_of_origin": "USA"
+      },
+      "information": {
+        "disclaimer": "Sync with app regularly.",
+        "usage_instruction": "Insert strip → apply blood sample."
+      },
+      "brand": "OneTouch",
+      "net_quantity": "1 device",
+      "weight": "170g",
+      "packaging_type": "Box",
+      "manufactured_by": "LifeScan Inc.",
+      "country_of_origin": "USA"
+    },
+    {
+      "id": 8,
+      "name": "Insulin Glargine Cartridge 100IU",
+      "description": "Recommended long-acting insulin cartridge for stable glucose control.",
+      "medicine_type": "Long Acting Insulin",
+      "uses": ["Type 1 Diabetes", "Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/Insulin/glargine-cart.png",
+      "cost": 930,
+      "discount": 8,
+      "final_price": 855.6,
+      "manufacturer": "Sanofi",
+      "stock": 90,
+      "rating": 4.7,
+
+      "highlights": {
+        "product_type": "Cartridge",
+        "pack_size": "1 cartridge (3ml)",
+        "shelf_life": "24 months",
+        "country_of_origin": "France"
+      },
+      "information": {
+        "disclaimer": "Use compatible pen only.",
+        "usage_instruction": "Inject once daily."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Insulin Glargine"],
+      "net_quantity": "3ml",
+      "packaging_type": "Cartridge",
+      "manufactured_by": "Sanofi Aventis",
+      "country_of_origin": "France"
+    },
+    {
+      "id": 9,
+      "name": "BeatO Smart Glucometer",
+      "description": "Recommendation for diabetics needing mobile-connected monitoring on the go.",
+      "medicine_type": "Smart Glucometer",
+      "uses": ["Sugar Monitoring"],
+      "images": "/assets/DiabetesCare/Glucometer/beato.png",
+      "cost": 999,
+      "discount": 20,
+      "final_price": 799.2,
+      "manufacturer": "BeatO",
+      "stock": 180,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Glucometer",
+        "pack_size": "Device + 20 test strips",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Requires smartphone and app installation.",
+        "usage_instruction": "Insert strip into phone and test."
+      },
+      "brand": "BeatO",
+      "net_quantity": "1 device",
+      "weight": "100g",
+      "packaging_type": "Box",
+      "manufactured_by": "Health Arx Technologies",
+      "country_of_origin": "India"
+    },
+    {
+      "id": 10,
+      "name": "Teneligliptin 20mg",
+      "description": "Recommended DPP-4 inhibitor for cost-effective diabetes management.",
+      "medicine_type": "Tablet",
+      "uses": ["Type 2 Diabetes"],
+      "images": "/assets/DiabetesCare/teneligliptin.png",
+      "cost": 130,
+      "discount": 10,
+      "final_price": 117,
+      "manufacturer": "Cipla",
+      "stock": 190,
+      "rating": 4.6,
+
+      "highlights": {
+        "product_type": "Tablet",
+        "pack_size": "1 strip (10 tablets)",
+        "shelf_life": "24 months",
+        "country_of_origin": "India"
+      },
+      "information": {
+        "disclaimer": "Check for kidney/liver function periodically.",
+        "usage_instruction": "Take once daily."
+      },
+      "brand": "Medicare Diabetes",
+      "ingredients": ["Teneligliptin"],
+      "net_quantity": "10 tablets",
+      "packaging_type": "Strip",
+      "manufacturer": "Cipla Ltd",
+      "country_of_origin": "India"
+    }
+  ]
+}
+}

@@ -1,0 +1,572 @@
+[
+  {
+    "id": 1,
+    "name": "FreshMint Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Colgate",
+    "priceNumeric": 99,
+    "originalPriceNumeric": 140,
+    "savings": "29%",
+    "image": "./assets/Oralimg/freshmint.jpg",
+    "description": "A refreshing toothpaste that helps fight cavities, freshens breath, and maintains oral hygiene.",
+    "keyFeatures": [
+      "Fights cavities",
+      "Freshens breath instantly",
+      "Strengthens enamel"
+    ],
+    "howToUse": "Brush twice daily for 2 minutes.",
+    "ingredients": "Fluoride, Sorbitol, Hydrated Silica",
+    "warnings": "Children under 6 should use a pea-sized amount under supervision."
+  },
+  {
+    "id": 2,
+    "name": "Herbal Clove Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Dabur",
+    "priceNumeric": 79,
+    "originalPriceNumeric": 110,
+    "savings": "28%",
+    "image": "/assets/Oralimg/herbalclove.jpg",
+    "description": "Natural toothpaste with clove oil that provides long-lasting protection from germs.",
+    "keyFeatures": [
+      "Herbal formula",
+      "Fights oral bacteria",
+      "Reduces gum swelling"
+    ],
+    "howToUse": "Brush twice a day for best results.",
+    "ingredients": "Clove Oil, Mint, Herbal Extracts",
+    "warnings": "Avoid swallowing."
+  },
+  {
+    "id": 3,
+    "name": "Charcoal Whitening Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Mamaearth",
+    "priceNumeric": 149,
+    "originalPriceNumeric": 199,
+    "savings": "25%",
+    "image": "/assets/Oralimg/charcoal.jpg",
+    "description": "Activated charcoal cleans teeth naturally and removes deep stains for a brighter smile.",
+    "keyFeatures": [
+      "Removes stains",
+      "Natural charcoal formula",
+      "Strengthens teeth"
+    ],
+    "howToUse": "Brush twice daily without applying too much pressure.",
+    "ingredients": "Activated Charcoal, Peppermint Oil, Silica",
+    "warnings": "Not recommended for children below 10."
+  },
+  {
+    "id": 4,
+    "name": "Cooling Mint Mouthwash",
+    "category": "Mouthwash",
+    "brand": "Listerine",
+    "priceNumeric": 199,
+    "originalPriceNumeric": 240,
+    "savings": "17%",
+    "image": "/assets/Oralimg/mouthwash.jpg",
+    "description": "Alcohol-free mouthwash that kills germs, freshens breath, and protects gums.",
+    "keyFeatures": [
+      "Kills 99% germs",
+      "Alcohol-free",
+      "Long-lasting freshness"
+    ],
+    "howToUse": "Rinse with 20ml for 30 seconds twice daily.",
+    "ingredients": "Eucalyptol, Menthol, Thymol",
+    "warnings": "Do not swallow."
+  },
+  {
+    "id": 5,
+    "name": "Advanced Whitening Mouthwash",
+    "category": "Mouthwash",
+    "brand": "Colgate",
+    "priceNumeric": 220,
+    "originalPriceNumeric": 280,
+    "savings": "21%",
+    "image": "/assets/Oralimg/advancedwash.jpg",
+    "description": "Removes surface stains while providing complete oral protection.",
+    "keyFeatures": [
+      "Whitens teeth",
+      "Strengthens enamel",
+      "Freshens breath"
+    ],
+    "howToUse": "Rinse for 30 seconds after brushing.",
+    "ingredients": "Hydrogen Peroxide, Mint Oil",
+    "warnings": "Avoid using more than 2 times a day."
+  },
+  {
+    "id": 6,
+    "name": "Sensitive Relief Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Sensodyne",
+    "priceNumeric": 180,
+    "originalPriceNumeric": 230,
+    "savings": "22%",
+    "image": "/assets/Oralimg/sensodyne.jpg",
+    "description": "Provides instant and long-lasting relief from tooth sensitivity.",
+    "keyFeatures": [
+      "Fast relief",
+      "Protects exposed dentin",
+      "Recommended by dentists"
+    ],
+    "howToUse": "Brush twice daily or as directed by a dentist.",
+    "ingredients": "Potassium Nitrate, Fluoride",
+    "warnings": "Consult a dentist if sensitivity persists."
+  },
+  {
+    "id": 7,
+    "name": "Kids Berry Toothpaste",
+    "category": "Kids Toothpaste",
+    "brand": "Oral-B",
+    "priceNumeric": 90,
+    "originalPriceNumeric": 120,
+    "savings": "25%",
+    "image": "/assets/Oralimg/kids.jpg",
+    "description": "Fluoride toothpaste specially designed for kids with a sweet berry flavor.",
+    "keyFeatures": [
+      "Kid-friendly flavor",
+      "Strengthens teeth",
+      "Cavity protection"
+    ],
+    "howToUse": "Use a pea-sized amount under adult supervision.",
+    "ingredients": "Fluoride, Calcium Carbonate",
+    "warnings": "Ensure kids do not swallow."
+  },
+  {
+    "id": 8,
+    "name": "Dry Mouth Relief Spray",
+    "category": "Spray",
+    "brand": "Biotene",
+    "priceNumeric": 399,
+    "originalPriceNumeric": 480,
+    "savings": "17%",
+    "image": "/assets/Oralimg/mouthspray.jpg",
+    "description": "Instantly relieves dryness and moisturizes mouth tissues.",
+    "keyFeatures": [
+      "Soothes dry mouth",
+      "Long-lasting moisture",
+      "Gentle on oral tissues"
+    ],
+    "howToUse": "Spray inside the mouth 2–3 times as needed.",
+    "ingredients": "Glycerin, Xylitol",
+    "warnings": "Avoid contact with eyes."
+  },
+  {
+    "id": 9,
+    "name": "Dental Floss Mint Waxed",
+    "category": "Floss",
+    "brand": "Oral-B",
+    "priceNumeric": 129,
+    "originalPriceNumeric": 170,
+    "savings": "24%",
+    "image": "/assets/Oralimg/oralbwax.jpg",
+    "description": "Waxed mint-flavored floss that removes plaque effectively between teeth.",
+    "keyFeatures": [
+      "Mint flavored",
+      "Waxed for smooth gliding",
+      "Removes plaque efficiently"
+    ],
+    "howToUse": "Use 40cm floss and clean between each tooth gently.",
+    "ingredients": "Nylon, Mint Flavor",
+    "warnings": "Avoid snapping floss onto gums."
+  },
+  {
+    "id": 10,
+    "name": "Soft Bristles Toothbrush",
+    "category": "Toothbrush",
+    "brand": "Pepsodent",
+    "priceNumeric": 49,
+    "originalPriceNumeric": 70,
+    "savings": "30%",
+    "image": "/assets/Oralimg/brush.jpg",
+    "description": "Soft bristle toothbrush designed to clean teeth gently without hurting gums.",
+    "keyFeatures": [
+      "Soft bristles",
+      "Ergonomic grip",
+      "Cleans hard-to-reach areas"
+    ],
+    "howToUse": "Brush gently twice daily.",
+    "ingredients": "Nylon Bristles, Plastic Handle",
+    "warnings": "Replace brush every 3 months."
+  },
+  {
+    "id": 11,
+    "name": "Oral-B Pro Repair Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Oral-B",
+    "priceNumeric": 165,
+    "originalPriceNumeric": 199,
+    "savings": "17%",
+    "image": "/assets/Oralimg/oral11.jpg",
+    "description": "Strengthens enamel and protects sensitive areas for better gum health.",
+    "keyFeatures": [
+      "Repairs weakened enamel",
+      "Protects from gum issues",
+      "Clinically tested formula"
+    ],
+    "howToUse": "Brush twice daily for best results.",
+    "ingredients": "Stannous Fluoride, Hydrated Silica, Glycerin.",
+    "warnings": "Avoid swallowing. Rinse thoroughly after brushing."
+  },
+  {
+    "id": 12,
+    "name": "Dabur Red Ayurvedic Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Dabur",
+    "priceNumeric": 92,
+    "originalPriceNumeric": 110,
+    "savings": "16%",
+    "image": "/assets/Oralimg/oral12.jpg",
+    "description": "Ayurvedic toothpaste for strong teeth and healthy gums.",
+    "keyFeatures": [
+      "Ayurvedic formulation",
+      "Strengthens gums",
+      "Freshens breath"
+    ],
+    "howToUse": "Brush twice daily for stronger teeth.",
+    "ingredients": "Laung, Pudina, Tomar, Sunthi.",
+    "warnings": "Store in a cool place. Suitable for adults."
+  },
+  {
+    "id": 13,
+    "name": "Himalaya Sparkling White Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Himalaya",
+    "priceNumeric": 95,
+    "originalPriceNumeric": 120,
+    "savings": "21%",
+    "image": "/assets/Oralimg/oral13.jpg",
+    "description": "Herbal whitening toothpaste for brighter teeth.",
+    "keyFeatures": [
+      "Herbal whitening",
+      "No harsh chemicals",
+      "Protects enamel"
+    ],
+    "howToUse": "Brush gently twice a day.",
+    "ingredients": "Bromelain, Papain, Miswak.",
+    "warnings": "Do not use if you have gum bleeding."
+  },
+  {
+    "id": 14,
+    "name": "Colgate Max Fresh Toothpaste (Blue Gel)",
+    "category": "Toothpaste",
+    "brand": "Colgate",
+    "priceNumeric": 145,
+    "originalPriceNumeric": 175,
+    "savings": "17%",
+    "image": "/assets/Oralimg/oral14.jpg",
+    "description": "Cooling crystals give long-lasting fresh breath.",
+    "keyFeatures": [
+      "Cooling mint blast",
+      "Long-lasting freshness",
+      "Deep cleaning formula"
+    ],
+    "howToUse": "Brush twice daily or as directed by a dentist.",
+    "ingredients": "Sorbitol, Silica, Sodium Fluoride.",
+    "warnings": "For children below 6, use a pea-sized amount."
+  },
+  {
+    "id": 15,
+    "name": "Pepsodent Germi Check Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Pepsodent",
+    "priceNumeric": 85,
+    "originalPriceNumeric": 99,
+    "savings": "14%",
+    "image": "/assets/Oralimg/oral15.jpg",
+    "description": "Provides 12-hour germ protection and strong teeth.",
+    "keyFeatures": [
+      "12-hour germ protection",
+      "Fights plaque",
+      "Strengthens enamel"
+    ],
+    "howToUse": "Brush twice daily for maximum protection.",
+    "ingredients": "Calcium Carbonate, Fluoride, Hydrated Silica.",
+    "warnings": "Rinse thoroughly. Not for toddlers."
+  },
+  {
+    "id": 16,
+    "name": "Closeup Ever Fresh Red Gel Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Closeup",
+    "priceNumeric": 99,
+    "originalPriceNumeric": 130,
+    "savings": "24%",
+    "image": "/assets/Oralimg/oral16.jpg",
+    "description": "Red gel toothpaste for long-lasting fresh breath.",
+    "keyFeatures": [
+      "Fresh breath up to 12 hours",
+      "Anti-germ formula",
+      "Strong mint flavor"
+    ],
+    "howToUse": "Brush thoroughly twice daily.",
+    "ingredients": "Glycerin, Silica, Menthol.",
+    "warnings": "Avoid swallowing. Keep away from children."
+  },
+  {
+    "id": 17,
+    "name": "Sensodyne Sensitive Soft Toothbrush",
+    "category": "Toothbrush",
+    "brand": "Sensodyne",
+    "priceNumeric": 110,
+    "originalPriceNumeric": 130,
+    "savings": "15%",
+    "image": "/assets/Oralimg/oral17.jpg",
+    "description": "Soft bristles designed for gentle cleaning of sensitive teeth.",
+    "keyFeatures": [
+      "Soft bristles",
+      "Flexible neck",
+      "Gentle on gums"
+    ],
+    "howToUse": "Brush in circular motions for effective cleaning.",
+    "ingredients": "Plastic handle, Soft nylon bristles.",
+    "warnings": "Replace every 3 months."
+  },
+  {
+    "id": 18,
+    "name": "Oral-B Pro Gum Care Toothbrush",
+    "category": "Toothbrush",
+    "brand": "Oral-B",
+    "priceNumeric": 145,
+    "originalPriceNumeric": 170,
+    "savings": "15%",
+    "image": "/assets/Oralimg/oral18.jpg",
+    "description": "Designed to protect gums while cleaning plaque.",
+    "keyFeatures": [
+      "Ultra-soft bristles",
+      "Angled neck",
+      "Improves gum health"
+    ],
+    "howToUse": "Brush gently along gum line.",
+    "ingredients": "Rubber grip, Soft bristles.",
+    "warnings": "Do not apply excessive pressure."
+  },
+  {
+    "id": 19,
+    "name": "Colgate Zig Zag Soft Toothbrush",
+    "category": "Toothbrush",
+    "brand": "Colgate",
+    "priceNumeric": 60,
+    "originalPriceNumeric": 75,
+    "savings": "20%",
+    "image": "/assets/Oralimg/oral19.jpg",
+    "description": "Zig-zag bristle pattern to reach deep between teeth.",
+    "keyFeatures": [
+      "Zig-zag bristles",
+      "Soft & flexible",
+      "Better plaque removal"
+    ],
+    "howToUse": "Brush gently for 2 minutes.",
+    "ingredients": "Plastic handle, Soft bristles.",
+    "warnings": "Replace brush every 3 months."
+  },
+  {
+    "id": 20,
+    "name": "Trisa Super Soft Toothbrush",
+    "category": "Toothbrush",
+    "brand": "Trisa",
+    "priceNumeric": 175,
+    "originalPriceNumeric": 210,
+    "savings": "17%",
+    "image": "/assets/Oralimg/oral20.jpg",
+    "description": "Swiss-made toothbrush with ultra-soft bristles.",
+    "keyFeatures": [
+      "Ultra-soft bristles",
+      "Swiss technology",
+      "Gentle cleaning"
+    ],
+    "howToUse": "Use twice daily with gentle strokes.",
+    "ingredients": "Swiss nylon bristles, Plastic handle.",
+    "warnings": "Do not bend bristles."
+  },
+  {
+    "id": 31,
+    "name": "Colgate Kids Strawberry Toothpaste",
+    "category": "Kids Toothpaste",
+    "brand": "Colgate",
+    "priceNumeric": 95,
+    "originalPriceNumeric": 120,
+    "savings": "21%",
+    "image": "/assets/Oralimg/oral31.jpg",
+    "description": "Fluoride toothpaste with kid-friendly strawberry flavor.",
+    "keyFeatures": [
+      "Gentle cleaning",
+      "Strawberry flavor",
+      "Cavity protection"
+    ],
+    "howToUse": "Use a pea-sized amount for kids under 6.",
+    "ingredients": "Fluoride, Sorbitol, Silica.",
+    "warnings": "Adult supervision required."
+  },
+  {
+    "id": 32,
+    "name": "Mamaearth Berry Blast Kids Toothpaste",
+    "category": "Kids Toothpaste",
+    "brand": "Mamaearth",
+    "priceNumeric": 149,
+    "originalPriceNumeric": 179,
+    "savings": "17%",
+    "image": "/assets/Oralimg/oral32.jpg",
+    "description": "100% natural toothpaste safe for children aged 3–12.",
+    "keyFeatures": [
+      "No SLS or fluoride",
+      "Natural berry flavor",
+      "Safe if swallowed"
+    ],
+    "howToUse": "Brush gently twice daily.",
+    "ingredients": "Xylitol, Aloe Vera, Stevia.",
+    "warnings": "Store away from heat."
+  },
+  {
+    "id": 33,
+    "name": "Oral-B Kids Extra Soft Toothbrush",
+    "category": "Kids Toothbrush",
+    "brand": "Oral-B",
+    "priceNumeric": 85,
+    "originalPriceNumeric": 99,
+    "savings": "14%",
+    "image": "/assets/Oralimg/oral33.jpg",
+    "description": "Extra soft bristles designed for gentle kids’ brushing.",
+    "keyFeatures": [
+      "Extra soft bristles",
+      "Comfortable grip",
+      "Gentle on gums"
+    ],
+    "howToUse": "Brush under adult supervision.",
+    "ingredients": "Soft nylon bristles, plastic handle.",
+    "warnings": "Replace every 2–3 months."
+  },
+  {
+    "id": 34,
+    "name": "Colgate Ortho Soft Toothbrush",
+    "category": "Specialized Toothbrush",
+    "brand": "Colgate",
+    "priceNumeric": 130,
+    "originalPriceNumeric": 155,
+    "savings": "16%",
+    "image": "/assets/Oralimg/oral34.jpg",
+    "description": "Specially designed for people with braces or dental appliances.",
+    "keyFeatures": [
+      "Ortho-friendly design",
+      "Soft bristles",
+      "Deep cleaning"
+    ],
+    "howToUse": "Brush around braces gently.",
+    "ingredients": "Soft nylon bristles, plastic handle.",
+    "warnings": "Do not press hard on brackets."
+  },
+  {
+    "id": 35,
+    "name": "Thermoseal Proxa Interdental Brushes",
+    "category": "Interdental Brush",
+    "brand": "Thermoseal",
+    "priceNumeric": 160,
+    "originalPriceNumeric": 195,
+    "savings": "18%",
+    "image": "/assets/Oralimg/oral35.jpg",
+    "description": "For cleaning hard-to-reach gaps between teeth.",
+    "keyFeatures": [
+      "Removes deep plaque",
+      "Gentle wire core",
+      "Ideal for braces users"
+    ],
+    "howToUse": "Insert gently between teeth and move back and forth.",
+    "ingredients": "Nylon bristles, stainless steel wire.",
+    "warnings": "Do not force into tight gaps."
+  },
+  {
+    "id": 36,
+    "name": "Himalaya Dental Cream",
+    "category": "Toothpaste",
+    "brand": "Himalaya",
+    "priceNumeric": 75,
+    "originalPriceNumeric": 95,
+    "savings": "21%",
+    "image": "/assets/Oralimg/oral36.jpg",
+    "description": "Herbal toothpaste for strong teeth and healthy gums.",
+    "keyFeatures": [
+      "Herbal protection",
+      "Cavity prevention",
+      "Reduces gum bleeding"
+    ],
+    "howToUse": "Brush twice daily.",
+    "ingredients": "Neem, Pomegranate, Triphala.",
+    "warnings": "Avoid if irritation occurs."
+  },
+  {
+    "id": 37,
+    "name": "Dabur Herbal Clove Mouthwash",
+    "category": "Mouthwash",
+    "brand": "Dabur",
+    "priceNumeric": 165,
+    "originalPriceNumeric": 199,
+    "savings": "17%",
+    "image": "/assets/Oralimg/oral37.jpg",
+    "description": "Clove-rich mouthwash for long-lasting germ protection.",
+    "keyFeatures": [
+      "Natural clove extract",
+      "Reduces bad breath",
+      "Prevents gum swelling"
+    ],
+    "howToUse": "Rinse with 15–20ml for 30 seconds.",
+    "ingredients": "Clove oil, Mint extract, Aqua.",
+    "warnings": "Do not swallow."
+  },
+  {
+    "id": 38,
+    "name": "Colgate Sensitive Clove Toothpaste",
+    "category": "Toothpaste",
+    "brand": "Colgate",
+    "priceNumeric": 165,
+    "originalPriceNumeric": 195,
+    "savings": "15%",
+    "image": "/assets/Oralimg/oral38.jpg",
+    "description": "Clove-enhanced toothpaste for sensitivity relief.",
+    "keyFeatures": [
+      "Reduces sensitivity",
+      "Clove oil for gum care",
+      "Strengthens enamel"
+    ],
+    "howToUse": "Brush twice daily for at least 2 weeks.",
+    "ingredients": "Potassium Nitrate, Clove oil.",
+    "warnings": "Not for children under 12."
+  },
+  {
+    "id": 39,
+    "name": "Smartfloss Expanding Dental Floss",
+    "category": "Dental Floss",
+    "brand": "Smartfloss",
+    "priceNumeric": 210,
+    "originalPriceNumeric": 249,
+    "savings": "15%",
+    "image": "/assets/Oralimg/oral39.jpg",
+    "description": "Soft expanding floss that adapts to gaps for deeper cleaning.",
+    "keyFeatures": [
+      "Expanding fibers",
+      "Gentle on gums",
+      "Superior plaque removal"
+    ],
+    "howToUse": "Use daily between teeth.",
+    "ingredients": "Waxed polyester.",
+    "warnings": "Use gently around gums."
+  },
+  {
+    "id": 40,
+    "name": "Toothsi Teeth Whitening Strips",
+    "category": "Teeth Whitening",
+    "brand": "Toothsi",
+    "priceNumeric": 399,
+    "originalPriceNumeric": 499,
+    "savings": "20%",
+    "image": "/assets/Oralimg/oral40.jpg",
+    "description": "Professional-grade whitening strips for visibly whiter teeth.",
+    "keyFeatures": [
+      "Easy peel-and-apply",
+      "Whitens in 14 days",
+      "Enamel-safe formula"
+    ],
+    "howToUse": "Apply strips for 30 minutes daily.",
+    "ingredients": "Hydrogen Peroxide Gel.",
+    "warnings": "Avoid use if you have gum sensitivity."
+  }
+]

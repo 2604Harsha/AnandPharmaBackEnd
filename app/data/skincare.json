@@ -1,0 +1,287 @@
+[
+  {
+    "id": 101,
+    "name": "Vitamin C Glow Serum",
+    "category": "Serum",
+    "brand": "The Ordinary",
+    "priceNumeric": 699,
+    "originalPriceNumeric": 899,
+    "savings": "22%",
+    "image": "/assets/Skincare/vitamin-c-serum.jpg",
+    "description": "Brightening serum with Vitamin C and Hyaluronic Acid for radiant, even-toned skin.",
+    "keyFeatures": [
+      "Reduces dark spots",
+      "Boosts collagen",
+      "Hydrates intensely"
+    ],
+    "howToUse": "Apply 2-3 drops on cleansed face morning and night.",
+    "ingredients": "Ascorbic Acid, Hyaluronic Acid, Vitamin E",
+    "warnings": "Use sunscreen during the day. Patch test before full application."
+  },
+  {
+    "id": 102,
+    "name": "Hydrating Aloe Vera Gel",
+    "category": "Moisturizer",
+    "brand": "Benton",
+    "priceNumeric": 499,
+    "originalPriceNumeric": 650,
+    "savings": "23%",
+    "image": "/assets/Skincare/aloe-gel.jpg",
+    "description": "Soothing 99% Aloe Vera gel for instant hydration and calming irritated skin.",
+    "keyFeatures": [
+      "Soothes sunburn",
+      "Oil-free moisturizer",
+      "Reduces redness"
+    ],
+    "howToUse": "Apply a thin layer on face and body as needed.",
+    "ingredients": "Aloe Barbadensis Leaf Juice, Glycerin",
+    "warnings": "Discontinue use if irritation occurs."
+  },
+  {
+    "id": 103,
+    "name": "Niacinamide 10% Serum",
+    "category": "Serum",
+    "brand": "The Ordinary",
+    "priceNumeric": 599,
+    "originalPriceNumeric": 750,
+    "savings": "20%",
+    "image": "/assets/Skincare/niacinamide.jpg",
+    "description": "Targets blemishes, minimizes pores, and regulates sebum production.",
+    "keyFeatures": [
+      "Reduces pore appearance",
+      "Controls oil",
+      "Improves skin texture"
+    ],
+    "howToUse": "Use after cleansing, before moisturizer.",
+    "ingredients": "Niacinamide, Zinc PCA",
+    "warnings": "Avoid combining with Vitamin C in the same routine."
+  },
+  {
+    "id": 104,
+    "name": "SPF 50+ Sunscreen Gel",
+    "category": "Sunscreen",
+    "brand": "Neutrogena",
+    "priceNumeric": 449,
+    "originalPriceNumeric": 550,
+    "savings": "18%",
+    "image": "/assets/Skincare/sunscreen.jpg",
+    "description": "Ultra-light, non-greasy sunscreen with broad spectrum UVA/UVB protection.",
+    "keyFeatures": [
+      "PA++++ protection",
+      "Non-comedogenic",
+      "Water-resistant"
+    ],
+    "howToUse": "Apply liberally 15 minutes before sun exposure. Reapply every 2 hours.",
+    "ingredients": "Avobenzone, Homosalate, Octisalate",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 105,
+    "name": "Salicylic Acid Face Wash",
+    "category": "Cleanser",
+    "brand": "Cetaphil",
+    "priceNumeric": 399,
+    "originalPriceNumeric": 500,
+    "savings": "20%",
+    "image": "/assets/Skincare/salicylic-cleanser.jpg",
+    "description": "Exfoliating cleanser that unclogs pores and fights acne-causing bacteria.",
+    "keyFeatures": [
+      "2% Salicylic Acid",
+      "Gentle exfoliation",
+      "Oil control"
+    ],
+    "howToUse": "Massage onto wet face, rinse thoroughly. Use twice daily.",
+    "ingredients": "Salicylic Acid, Glycerin, Panthenol",
+    "warnings": "May cause dryness. Moisturize after use."
+  },
+  {
+    "id": 106,
+    "name": "Retinol Night Cream",
+    "category": "Night Cream",
+    "brand": "Olays",
+    "priceNumeric": 899,
+    "originalPriceNumeric": 1199,
+    "savings": "25%",
+    "image": "/assets/Skincare/retinol-cream.jpg",
+    "description": "Anti-aging cream with Retinol to reduce wrinkles and improve skin elasticity.",
+    "keyFeatures": [
+      "Diminishes fine lines",
+      "Boosts cell renewal",
+      "Non-irritating formula"
+    ],
+    "howToUse": "Apply a pea-sized amount on face and neck at night.",
+    "ingredients": "Retinol, Niacinamide, Peptides",
+    "warnings": "Use only at night. Always follow with SPF in the morning."
+  },
+  {
+    "id": 107,
+    "name": "Hyaluronic Acid Moisturizer",
+    "category": "Moisturizer",
+    "brand": "Cerave",
+    "priceNumeric": 649,
+    "originalPriceNumeric": 799,
+    "savings": "19%",
+    "image": "/assets/Skincare/hyaluronic-moisturizer.jpg",
+    "description": "Lightweight gel-cream that provides 72-hour hydration with Hyaluronic Acid.",
+    "keyFeatures": [
+      "Intense hydration",
+      "Restores skin barrier",
+      "Fragrance-free"
+    ],
+    "howToUse": "Apply to face and neck morning and evening.",
+    "ingredients": "Hyaluronic Acid, Ceramides, Glycerin",
+    "warnings": "Store in a cool, dry place."
+  },
+  {
+    "id": 108,
+    "name": "Charcoal Detox Mask",
+    "category": "Face Mask",
+    "brand": "Innisfree",
+    "priceNumeric": 349,
+    "originalPriceNumeric": 450,
+    "savings": "22%",
+    "image": "/assets/Skincare/charcoal-mask.jpg",
+    "description": "Purifying clay mask with charcoal to draw out impurities and excess oil.",
+    "keyFeatures": [
+      "Deep cleansing",
+      "Minimizes pores",
+      "Smooths skin texture"
+    ],
+    "howToUse": "Apply an even layer, leave for 10-15 minutes, then rinse.",
+    "ingredients": "Activated Charcoal, Kaolin Clay, Menthol",
+    "warnings": "Avoid eye and lip area. Use once or twice a week."
+  },
+  {
+    "id": 109,
+    "name": "Tea Tree Oil Spot Treatment",
+    "category": "Treatment",
+    "brand": "The Body Shop",
+    "priceNumeric": 299,
+    "originalPriceNumeric": 399,
+    "savings": "25%",
+    "image": "/assets/Skincare/tea-tree-treatment.jpg",
+    "description": "Natural antiseptic treatment to reduce redness and size of acne spots.",
+    "keyFeatures": [
+      "Anti-inflammatory",
+      "Reduces swelling",
+      "Natural formula"
+    ],
+    "howToUse": "Dab directly on blemishes up to 3 times daily.",
+    "ingredients": "Tea Tree Oil, Hamamelis Water",
+    "warnings": "For spot use only. Do not apply on large areas."
+  },
+  {
+    "id": 110,
+    "name": "AHA 30% + BHA 2% Peeling Solution",
+    "category": "Exfoliator",
+    "brand": "The Ordinary",
+    "priceNumeric": 799,
+    "originalPriceNumeric": 999,
+    "savings": "20%",
+    "image": "/assets/Skincare/aha-bha-peel.jpg",
+    "description": "Professional-grade at-home peel to improve skin radiance and texture.",
+    "keyFeatures": [
+      "Exfoliates deeply",
+      "Unclogs pores",
+      "Brightens complexion"
+    ],
+    "howToUse": "Apply on dry face, leave for no more than 10 minutes, rinse thoroughly.",
+    "ingredients": "Glycolic Acid, Salicylic Acid, Tasmanian Pepperberry",
+    "warnings": "Use only once a week. Not for sensitive skin. Avoid sun exposure after use."
+  },
+  {
+    "id": 111,
+    "name": "Rosehip Oil",
+    "category": "Facial Oil",
+    "brand": "The Ordinary",
+    "priceNumeric": 899,
+    "originalPriceNumeric": 1099,
+    "savings": "18%",
+    "image": "/assets/Skincare/rosehip-oil.jpg",
+    "description": "Cold-pressed Rosehip oil rich in antioxidants and essential fatty acids.",
+    "keyFeatures": [
+      "Fades scars & stretch marks",
+      "Improves elasticity",
+      "Nourishes dry skin"
+    ],
+    "howToUse": "Warm 2-3 drops between palms and press onto face.",
+    "ingredients": "100% Organic Rosa Canina Seed Oil",
+    "warnings": "Store away from light and heat."
+  },
+  {
+    "id": 112,
+    "name": "Centella Asiatica Calming Cream",
+    "category": "Moisturizer",
+    "brand": "Purito",
+    "priceNumeric": 749,
+    "originalPriceNumeric": 899,
+    "savings": "17%",
+    "image": "/assets/Skincare/centella-cream.jpg",
+    "description": "Soothing cream with Centella Asiatica to repair and calm sensitive skin.",
+    "keyFeatures": [
+      "Reduces redness",
+      "Strengthens skin barrier",
+      "Fast absorption"
+    ],
+    "howToUse": "Apply as the last step of your skincare routine.",
+    "ingredients": "Centella Asiatica Extract, Madecassoside, Ceramides",
+    "warnings": "Patch test on sensitive skin."
+  },
+  {
+    "id": 113,
+    "name": "Glycolic Acid Toner 7%",
+    "category": "Toner",
+    "brand": "The Ordinary",
+    "priceNumeric": 549,
+    "originalPriceNumeric": 699,
+    "savings": "21%",
+    "image": "/assets/Skincare/glycolic-toner.jpg",
+    "description": "Exfoliating toner to improve skin clarity, texture, and radiance.",
+    "keyFeatures": [
+      "Gentle exfoliation",
+      "Brightens dull skin",
+      "Improves skin tone"
+    ],
+    "howToUse": "Apply with cotton pad after cleansing, avoiding eye area.",
+    "ingredients": "Glycolic Acid, Tasmanian Pepperberry, Glycerin",
+    "warnings": "Start with 2-3 times weekly. Use sunscreen daily."
+  },
+  {
+    "id": 114,
+    "name": "Snail Mucin Essence",
+    "category": "Essence",
+    "brand": "Cosrx",
+    "priceNumeric": 1199,
+    "originalPriceNumeric": 1499,
+    "savings": "20%",
+    "image": "/assets/Skincare/snail-essence.jpg",
+    "description": "Hydrating and repairing essence with 96% Snail Secretion Filtrate.",
+    "keyFeatures": [
+      "Intense hydration",
+      "Repairs damaged skin",
+      "Anti-aging benefits"
+    ],
+    "howToUse": "Pat onto face after toner, before moisturizer.",
+    "ingredients": "Snail Secretion Filtrate, Betaine, Sodium Hyaluronate",
+    "warnings": "Discontinue if allergic reaction occurs."
+  },
+  {
+    "id": 115,
+    "name": "Ceramide Barrier Repair Cream",
+    "category": "Moisturizer",
+    "brand": "Dr. Jart+",
+    "priceNumeric": 1899,
+    "originalPriceNumeric": 2299,
+    "savings": "17%",
+    "image": "/assets/Skincare/ceramide-cream.jpg",
+    "description": "Rich cream that restores and strengthens the skin's natural moisture barrier.",
+    "keyFeatures": [
+      "Repairs damaged barrier",
+      "Soothes irritation",
+      "Long-lasting hydration"
+    ],
+    "howToUse": "Apply as the final step of your PM routine.",
+    "ingredients": "Ceramides, Cholesterol, Fatty Acids",
+    "warnings": "Suitable for very dry and sensitive skin."
+  }
+]

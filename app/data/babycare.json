@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "Gentle Baby Diaper Pack",
+    "category": "Diapers",
+    "brand": "Huggies",
+    "priceNumeric": 499,
+    "originalPriceNumeric": 699,
+    "savings": "29%",
+    "image": "/assets/Babyimg/huggies.jpg",
+    "description": "Keep your baby dry and happy all day with Huggies Gentle Baby Diapers. Soft, breathable, and super absorbent for up to 12 hours of protection.",
+    "keyFeatures": [
+      "Ultra-soft and breathable material for sensitive skin",
+      "Leak-lock technology keeps baby dry for up to 12 hours",
+      "Hypoallergenic and dermatologically tested"
+    ],
+    "howToUse": "Change diapers every 3–4 hours or as needed. Dispose of used diapers properly.",
+    "ingredients": "Cotton blend, absorbent polymers",
+    "warnings": "For external use only. Keep out of reach of children."
+  },
+  {
+    "id": 2,
+    "name": "Baby Moisturizing Lotion",
+    "category": "Lotion",
+    "brand": "Johnson's",
+    "priceNumeric": 299,
+    "originalPriceNumeric": 399,
+    "savings": "25%",
+    "image": "/assets/Babyimg/sebamed.jpg",
+    "description": "Gentle, non-sticky lotion to keep your baby’s skin soft, smooth, and hydrated all day long.",
+    "keyFeatures": [
+      "Moisturizes and softens delicate baby skin",
+      "Non-greasy and quick-absorbing",
+      "Dermatologically tested for sensitive skin"
+    ],
+    "howToUse": "Apply a small amount to baby's body and massage gently until fully absorbed.",
+    "ingredients": "Water, Aloe Vera Extract, Vitamin E, Glycerin",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 3,
+    "name": "Baby Powder",
+    "category": "Powder",
+    "brand": "Pampers",
+    "priceNumeric": 199,
+    "originalPriceNumeric": 250,
+    "savings": "20%",
+    "image": "/assets/Babyimg/powder.jpg",
+    "description": "Keep your baby's skin fresh and dry throughout the day with Pampers Baby Powder.",
+    "keyFeatures": [
+      "Absorbs moisture and prevents rashes",
+      "Light fragrance suitable for babies",
+      "Soft and smooth texture for delicate skin"
+    ],
+    "howToUse": "Apply gently on clean, dry skin. Avoid inhalation.",
+    "ingredients": "Talc, Cornstarch, Fragrance",
+    "warnings": "For external use only. Keep away from nose and mouth."
+  },
+  {
+    "id": 4,
+    "name": "Baby Shampoo",
+    "category": "Shampoo",
+    "brand": "Mamaearth",
+    "priceNumeric": 349,
+    "originalPriceNumeric": 450,
+    "savings": "22%",
+    "image": "/assets/Babyimg/shampoo.jpg",
+    "description": "Tear-free shampoo that gently cleanses hair and scalp while keeping baby’s hair soft, shiny, and tangle-free.",
+    "keyFeatures": [
+      "Tear-free formula for gentle cleansing",
+      "Moisturizes scalp and hair",
+      "Free from sulfates and parabens"
+    ],
+    "howToUse": "Apply on wet hair, lather gently, and rinse thoroughly.",
+    "ingredients": "Water, Aloe Vera Extract, Coconut Extract, Mild Surfactants",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 5,
+    "name": "Diaper Rash Cream",
+    "category": "Ointment",
+    "brand": "Sebamed",
+    "priceNumeric": 259,
+    "originalPriceNumeric": 320,
+    "savings": "19%",
+    "image": "/assets/Babyimg/rashcream.jpg",
+    "description": "Protect and soothe your baby's delicate skin from diaper rashes with Sebamed Diaper Rash Cream.",
+    "keyFeatures": [
+      "Forms a protective barrier against moisture",
+      "Soothes irritated skin with chamomile",
+      "Dermatologically tested for sensitive skin"
+    ],
+    "howToUse": "Apply a thin layer on clean, dry skin during every diaper change.",
+    "ingredients": "Zinc Oxide, Chamomile Extract, Petrolatum",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 6,
+    "name": "Baby Wipes Pack",
+    "category": "Wipes",
+    "brand": "Himalaya Babycare",
+    "priceNumeric": 149,
+    "originalPriceNumeric": 200,
+    "savings": "26%",
+    "image": "/assets/Babyimg/babywipes.jpg",
+    "description": "Gentle, soft, and alcohol-free wipes to clean and refresh your baby's delicate skin anytime.",
+    "keyFeatures": [
+      "Soft and gentle on delicate skin",
+      "Moisturizes and cleans effectively",
+      "Alcohol-free and hypoallergenic"
+    ],
+    "howToUse": "Wipe the baby's skin gently as needed. Dispose after single use.",
+    "ingredients": "Water, Aloe Vera Extract, Vitamin E, Mild Cleansing Agents",
+    "warnings": "For external use only. Keep out of reach of children."
+  },
+  {
+    "id": 7,
+    "name": "Baby Soap",
+    "category": "Soap",
+    "brand": "Dove Baby",
+    "priceNumeric": 99,
+    "originalPriceNumeric": 140,
+    "savings": "29%",
+    "image": "/assets/Babyimg/soap.jpg",
+    "description": "Mild, moisturizing, and gentle soap for newborns to keep their skin soft and hydrated.",
+    "keyFeatures": [
+      "Gentle cleansing without drying",
+      "Moisturizes baby’s delicate skin",
+      "Dermatologically tested and hypoallergenic"
+    ],
+    "howToUse": "Lather with water and apply gently on baby's body, then rinse.",
+    "ingredients": "Glycerin, Natural Oils, Mild Surfactants",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 8,
+    "name": "Baby Oil",
+    "category": "Oil",
+    "brand": "Johnson's",
+    "priceNumeric": 179,
+    "originalPriceNumeric": 230,
+    "savings": "22%",
+    "image": "/assets/Babyimg/oil.jpg",
+    "description": "Lightweight oil to nourish, hydrate, and massage your baby's delicate skin.",
+    "keyFeatures": [
+      "Lightweight oil for gentle massage",
+      "Keeps skin soft and hydrated",
+      "Dermatologically tested"
+    ],
+    "howToUse": "Apply a few drops on palms and massage baby's skin gently.",
+    "ingredients": "Mineral Oil, Vitamin E",
+    "warnings": "For external use only."
+  },
+  {
+    "id": 9,
+    "name": "Baby Bath Gel",
+    "category": "Bath",
+    "brand": "Mamaearth",
+    "priceNumeric": 269,
+    "originalPriceNumeric": 350,
+    "savings": "23%",
+    "image": "/assets/Babyimg/bathgel.jpg",
+    "description": "Mild, tear-free body wash to cleanse and hydrate your baby's delicate skin.",
+    "keyFeatures": [
+      "Mild cleansing formula",
+      "Moisturizes and soothes skin",
+      "Tear-free and pH balanced"
+    ],
+    "howToUse": "Apply on wet skin, lather gently, and rinse thoroughly.",
+    "ingredients": "Water, Aloe Vera Extract, Calendula Extract, Mild Surfactants",
+    "warnings": "For external use only. Avoid contact with eyes."
+  },
+  {
+    "id": 10,
+    "name": "Soothing Baby Cream",
+    "category": "Cream",
+    "brand": "Aveeno Baby",
+    "priceNumeric": 399,
+    "originalPriceNumeric": 500,
+    "savings": "20%",
+    "image": "/assets/Babyimg/aveeno.jpg",
+    "description": "Hydrating and soothing cream to protect your baby's skin from dryness and irritation.",
+    "keyFeatures": [
+      "Hydrates and soothes dry skin",
+      "Fragrance-free and gentle",
+      "Safe for daily use on baby skin"
+    ],
+    "howToUse": "Apply evenly on baby's body and massage gently until absorbed.",
+    "ingredients": "Oat Extract, Glycerin, Emollients",
+    "warnings": "For external use only. Avoid contact with eyes."
+  }
+]

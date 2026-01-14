@@ -1,0 +1,302 @@
+[
+  {
+    "id": 201,
+    "name": "N95 Respirator Mask",
+    "category": "Face Mask",
+    "brand": "3M",
+    "priceNumeric": 249,
+    "originalPriceNumeric": 299,
+    "savings": "17%",
+    "image": "/assets/Covidimg/n95-mask.jpg",
+    "description": "NIOSH-approved N95 respirator mask providing 95% filtration efficiency against airborne particles.",
+    "keyFeatures": [
+      "NIOSH approved",
+      "95% filtration efficiency",
+      "Adjustable nose clip",
+      "Latex-free"
+    ],
+    "howToUse": "Place over nose and mouth, secure straps, mold nose clip for tight seal.",
+    "ingredients": "Non-woven polypropylene, nose foam, elastic straps",
+    "warnings": "Single-use only. Do not reuse. Discard if damaged or soiled."
+  },
+  {
+    "id": 202,
+    "name": "3-Ply Surgical Mask (Pack of 50)",
+    "category": "Face Mask",
+    "brand": "Honeywell",
+    "priceNumeric": 299,
+    "originalPriceNumeric": 399,
+    "savings": "25%",
+    "image": "/assets/Covidimg/surgical-mask.jpg",
+    "description": "Disposable 3-ply surgical masks with melt-blown filter layer for bacterial filtration.",
+    "keyFeatures": [
+      "3-layer protection",
+      "Fluid resistant",
+      "Comfortable ear loops",
+      "Bacterial filtration >95%"
+    ],
+    "howToUse": "Wear with blue side facing out. Pinch nose bridge for secure fit.",
+    "ingredients": "Non-woven fabric, melt-blown polypropylene, nose wire",
+    "warnings": "Dispose after single use. Do not wash."
+  },
+  {
+    "id": 203,
+    "name": "Hand Sanitizer Gel (500ml)",
+    "category": "Sanitizer",
+    "brand": "Dettol",
+    "priceNumeric": 199,
+    "originalPriceNumeric": 249,
+    "savings": "20%",
+    "image": "/assets/Covidimg/hand-sanitizer.jpg",
+    "description": "Alcohol-based sanitizer gel with 70% ethanol, kills 99.9% germs instantly.",
+    "keyFeatures": [
+      "70% alcohol content",
+      "Kills 99.9% germs",
+      "Moisturizing formula",
+      "Quick drying"
+    ],
+    "howToUse": "Apply palm-sized amount and rub hands together for 20 seconds.",
+    "ingredients": "Ethanol 70%, Glycerin, Hydrogen Peroxide",
+    "warnings": "Flammable. Keep away from fire. For external use only."
+  },
+  {
+    "id": 204,
+    "name": "Digital Infrared Thermometer",
+    "category": "Thermometer",
+    "brand": "Omron",
+    "priceNumeric": 799,
+    "originalPriceNumeric": 999,
+    "savings": "20%",
+    "image": "/assets/Covidimg/thermometer.jpg",
+    "description": "Non-contact forehead thermometer with instant reading and fever alarm.",
+    "keyFeatures": [
+      "Non-contact measurement",
+      "1-second reading",
+      "Fever alarm",
+      "Memory function"
+    ],
+    "howToUse": "Hold 3-5cm from forehead, press button for instant reading.",
+    "ingredients": "Plastic casing, infrared sensor, LCD screen",
+    "warnings": "Do not point at eyes. Keep away from children. Clean probe after use."
+  },
+  {
+    "id": 205,
+    "name": "Disposable Nitrile Gloves (Box of 100)",
+    "category": "Gloves",
+    "brand": "Medline",
+    "priceNumeric": 449,
+    "originalPriceNumeric": 549,
+    "savings": "18%",
+    "image": "/assets/Covidimg/nitrile-gloves.jpg",
+    "description": "Powder-free nitrile examination gloves offering superior protection and sensitivity.",
+    "keyFeatures": [
+      "Powder-free",
+      "Latex-free",
+      "Textured fingertips",
+      "Chemical resistant"
+    ],
+    "howToUse": "Select proper size, put on clean hands, remove carefully avoiding contamination.",
+    "ingredients": "Nitrile rubber",
+    "warnings": "Single use only. Not for surgical use. Check for tears before use."
+  },
+  {
+    "id": 206,
+    "name": "PPE Kit (Full Body)",
+    "category": "PPE Kit",
+    "brand": "HLL",
+    "priceNumeric": 599,
+    "originalPriceNumeric": 799,
+    "savings": "25%",
+    "image": "/assets/Covidimg/ppe-kit.jpg",
+    "description": "Complete personal protective equipment kit for healthcare workers and high-risk environments.",
+    "keyFeatures": [
+      "Full body coverage",
+      "Waterproof material",
+      "Includes goggles and shoe covers",
+      "Anti-fog visor"
+    ],
+    "howToUse": "Follow donning sequence: gown first, mask, goggles, gloves last.",
+    "ingredients": "Non-woven polypropylene, polyurethane, elastic",
+    "warnings": "Disposable. Do not reuse. Remove carefully to avoid contamination."
+  },
+  {
+    "id": 207,
+    "name": "Surface Disinfectant Spray (1L)",
+    "category": "Disinfectant",
+    "brand": "Lysol",
+    "priceNumeric": 349,
+    "originalPriceNumeric": 449,
+    "savings": "22%",
+    "image": "/assets/Covidimg/disinfectant-spray.jpg",
+    "description": "Kills 99.9% of viruses and bacteria on surfaces including COVID-19 virus.",
+    "keyFeatures": [
+      "Kills COVID-19 virus",
+      "Works in 30 seconds",
+      "No-rinse formula",
+      "Fresh scent"
+    ],
+    "howToUse": "Spray 6-8 inches from surface, let stand for 30 seconds, wipe if needed.",
+    "ingredients": "Ethyl Alcohol, Quaternary Ammonium Compounds",
+    "warnings": "Keep away from children. Avoid contact with eyes. Use in ventilated area."
+  },
+  {
+    "id": 208,
+    "name": "Pulse Oximeter",
+    "category": "Monitor",
+    "brand": "Dr Trust",
+    "priceNumeric": 1299,
+    "originalPriceNumeric": 1599,
+    "savings": "19%",
+    "image": "/assets/Covidimg/pulse-oximeter.jpg",
+    "description": "Fingertip pulse oximeter measuring SpO2 and pulse rate for home monitoring.",
+    "keyFeatures": [
+      "Measures oxygen saturation",
+      "Heart rate monitor",
+      "OLED display",
+      "Automatic shut-off"
+    ],
+    "howToUse": "Insert finger fully, wait for stable reading (about 10 seconds).",
+    "ingredients": "ABS plastic, LED sensors, OLED screen",
+    "warnings": "Not for medical diagnosis. Consult doctor for abnormal readings."
+  },
+  {
+    "id": 209,
+    "name": "Face Shield with Adjustable Headband",
+    "category": "Face Shield",
+    "brand": "3M",
+    "priceNumeric": 199,
+    "originalPriceNumeric": 249,
+    "savings": "20%",
+    "image": "/assets/Covidimg/face-shield.jpg",
+    "description": "Reusable face shield providing full face protection against droplets and splashes.",
+    "keyFeatures": [
+      "Anti-fog coating",
+      "Adjustable headband",
+      "Lightweight design",
+      "Reusable"
+    ],
+    "howToUse": "Place over face, adjust headband for comfortable fit.",
+    "ingredients": "PET visor, foam forehead pad, elastic band",
+    "warnings": "Clean with soap and water after each use. Replace if scratched."
+  },
+  {
+    "id": 210,
+    "name": "Oxygen Concentrator 5L",
+    "category": "Oxygen Therapy",
+    "brand": "Philips",
+    "priceNumeric": 54999,
+    "originalPriceNumeric": 64999,
+    "savings": "15%",
+    "image": "/assets/Covidimg/oxygen-concentrator.jpg",
+    "description": "Medical-grade oxygen concentrator delivering 90% pure oxygen up to 5 liters per minute.",
+    "keyFeatures": [
+      "5 LPM oxygen flow",
+      "90% oxygen purity",
+      "Built-in humidifier",
+      "Low noise operation"
+    ],
+    "howToUse": "Connect nasal cannula, set prescribed flow rate, turn on.",
+    "ingredients": "ABS cabinet, molecular sieve, compressor",
+    "warnings": "Prescription required. Keep away from flames. Medical supervision needed."
+  },
+  {
+    "id": 211,
+    "name": "Disposable Isolation Gown",
+    "category": "Protective Wear",
+    "brand": "Medisafe",
+    "priceNumeric": 149,
+    "originalPriceNumeric": 199,
+    "savings": "25%",
+    "image": "/assets/Covidimg/isolation-gown.jpg",
+    "description": "Water-resistant isolation gown with full sleeve coverage and tie closure.",
+    "keyFeatures": [
+      "Water resistant",
+      "Full sleeve design",
+      "Tie neck and waist",
+      "Medium weight"
+    ],
+    "howToUse": "Wear over clothing, tie at neck and waist, remove carefully after use.",
+    "ingredients": "Polypropylene SMS material",
+    "warnings": "Single use only. Discard after use. Not for sterile procedures."
+  },
+  {
+    "id": 212,
+    "name": "Antiviral Nasal Spray",
+    "category": "Nasal Spray",
+    "brand": "Naselin",
+    "priceNumeric": 299,
+    "originalPriceNumeric": 399,
+    "savings": "25%",
+    "image": "/assets/Covidimg/nasal-spray.jpg",
+    "description": "Povidone-iodine nasal spray that reduces viral load in nasal passages.",
+    "keyFeatures": [
+      "Reduces viral load",
+      "Soothes nasal passages",
+      "Alcohol-free",
+      "Clinically tested"
+    ],
+    "howToUse": "Spray 1-2 times in each nostril, 2-3 times daily.",
+    "ingredients": "Povidone-Iodine 0.5%, Sodium Chloride, Purified Water",
+    "warnings": "Do not use if allergic to iodine. Consult doctor before use."
+  },
+  {
+    "id": 213,
+    "name": "UV Sanitizer Box for Mobile",
+    "category": "Sanitizer",
+    "brand": "Mi",
+    "priceNumeric": 1999,
+    "originalPriceNumeric": 2499,
+    "savings": "20%",
+    "image": "/assets/Covidimg/uv-sanitizer.jpg",
+    "description": "UV-C light sanitizer box that kills 99.9% germs on phones, keys, and small items.",
+    "keyFeatures": [
+      "UV-C sterilization",
+      "360° coverage",
+      "Automatic shut-off",
+      "2-minute cycle"
+    ],
+    "howToUse": "Place items inside, close lid, press start button.",
+    "ingredients": "ABS plastic, UV-C lamps, electronic components",
+    "warnings": "Do not look directly at UV light. Keep away from children."
+  },
+  {
+    "id": 214,
+    "name": "Steam Inhaler",
+    "category": "Respiratory Care",
+    "brand": "Omron",
+    "priceNumeric": 2499,
+    "originalPriceNumeric": 2999,
+    "savings": "17%",
+    "image": "/assets/Covidimg/steam-inhaler.jpg",
+    "description": "Cool mist steam inhaler for respiratory relief, helps with congestion and breathing.",
+    "keyFeatures": [
+      "Cool mist technology",
+      "Adjustable steam control",
+      "Mask and mouthpiece included",
+      "Quiet operation"
+    ],
+    "howToUse": "Add distilled water, attach mask, turn on and inhale steam.",
+    "ingredients": "Plastic housing, heating element, water tank",
+    "warnings": "Use distilled water only. Do not touch hot surfaces. Keep upright."
+  },
+  {
+    "id": 215,
+    "name": "Emergency Home Test Kit (COVID-19)",
+    "category": "Test Kit",
+    "brand": "Mylab",
+    "priceNumeric": 499,
+    "originalPriceNumeric": 699,
+    "savings": "29%",
+    "image": "/assets/Covidimg/test-kit.jpg",
+    "description": "Rapid antigen self-test kit for COVID-19 detection at home with results in 15 minutes.",
+    "keyFeatures": [
+      "Results in 15 minutes",
+      "98% accuracy",
+      "Easy nasal swab",
+      "CE certified"
+    ],
+    "howToUse": "Collect nasal sample, mix with buffer, apply to test cassette, wait 15 minutes.",
+    "ingredients": "Test cassette, nasal swab, extraction buffer, dropper",
+    "warnings": "For self-testing only. Positive results require PCR confirmation. Check expiry date."
+  }
+]

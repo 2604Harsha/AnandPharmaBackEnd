@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
+from utils.payment_id import generate_payment_id
 from core.database import get_db
 from core.rbac import require_role
 from core.razorpay_client import razorpay_client
@@ -53,13 +54,14 @@ async def create_payment_order(
 @router.post("/verify")
 async def verify_payment(
     payload: VerifyPayment,
-    db: AsyncSession = Depends(get_db)
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("user"))
 ):
     # 🔐 Verify Razorpay signature
     try:
         await razorpay_service.verify_payment(
             payload.razorpay_order_id,
-            payload.razorpay_payment_id,
+            payload.razorpay_key_id,
             payload.razorpay_signature,
         )
     except Exception:
@@ -80,6 +82,8 @@ async def verify_payment(
  
     if not order:
         raise HTTPException(404, "Order not found")
+    if not order.payment_id:
+        order.payment_id = generate_payment_id()
  
     # 🟡 Already processed
     if order.payment_status == "SUCCESS":
@@ -88,11 +92,12 @@ async def verify_payment(
             "payment_status": "PAID",
             "payment_result": "SUCCESS",
             "order_id": order.id,
+            "payment_id":order.payment_id,
             "order_status": order.status
         }
  
     # ✅ Mark payment success
-    order.razorpay_payment_id = payload.razorpay_payment_id
+    order.razorpay_payment_id = payload.razorpay_key_id
     order.payment_status = "SUCCESS"
     order.payment_method = "RAZORPAY"
     order.status = OrderStatus.WAITING_PHARMACIST
@@ -108,6 +113,7 @@ async def verify_payment(
         "payment_status": "PAID",
         "payment_result": "SUCCESS",
         "order_id": order.id,
+        "payment_id":order.payment_id,
         "order_status": order.status
     }
  

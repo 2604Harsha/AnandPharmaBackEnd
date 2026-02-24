@@ -4,6 +4,8 @@ from fastapi import security
 from fastapi.security import HTTPBasicCredentials, HTTPBearer
 from sqlalchemy import and_, delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from schemas.delivery_agent_schema import DeliveryAgentCreate
+from schemas.pharmacist_schema import PharmacistCreate
 from models.password_reset import PasswordResetToken
 from core.security import hash_password
 from models.user import User
@@ -11,8 +13,8 @@ from models.email_otp import EmailOTP
 from services.email_service import send_html_email
 from services.email_service import send_auth_otp_email, resend_auth_otp_email
 from utils.otp import generate_otp
-from schemas.user import ResetPasswordRequest, UserCreate, UserLogin
-from services.auth_service import create_user, authenticate_user
+from schemas.user import DeliveryAgentUpdate, ResetPasswordRequest, UserCreate, UserLogin
+from services.auth_service import create_delivery_agent, create_pharmacist, create_user, authenticate_user, update_delivery_agent
 from utils.jwt import create_access_token
 from core.database import get_db
 from core.rbac import require_role
@@ -26,7 +28,6 @@ swagger_security = HTTPBearer()
 # ======================================================
 @router.post("/register")
 async def register(user: UserCreate, db: AsyncSession = Depends(get_db)):
-
     if user.role != "user":
         raise HTTPException(
             status_code=403,
@@ -44,9 +45,10 @@ async def register(user: UserCreate, db: AsyncSession = Depends(get_db)):
             expires_at=EmailOTP.expiry_time()
         )
     )
+
     await db.commit()
 
-    # ✅ New Template Mail
+    # ✅ Send email
     send_auth_otp_email(
         email=new_user.email,
         name=new_user.full_name or "User",
@@ -58,7 +60,6 @@ async def register(user: UserCreate, db: AsyncSession = Depends(get_db)):
         "status": "NOT VERIFIED"
     }
 
-
 # ======================================================
 # ✅ VERIFY OTP
 # ======================================================
@@ -68,12 +69,14 @@ async def verify_otp(
     otp: str,
     db: AsyncSession = Depends(get_db)
 ):
+    # 🔍 find user
     result = await db.execute(select(User).where(User.email == email))
     user = result.scalar_one_or_none()
 
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
+    # 🔍 verify OTP
     result = await db.execute(
         select(EmailOTP).where(
             and_(
@@ -88,14 +91,22 @@ async def verify_otp(
     if not record:
         raise HTTPException(status_code=400, detail="Invalid or expired OTP")
 
+    # ⭐⭐⭐ MAIN FIX — ACTIVATE USER
     user.is_verified = True
+    user.is_active = True
+
+    # 🔥 delete used OTP
+    await db.delete(record)
+
     await db.commit()
+    await db.refresh(user)
 
     return {
         "message": "Email verified successfully",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "user_id": user.id,
+        "role": user.role
     }
-
 
 # ======================================================
 # ✅ RESEND OTP
@@ -144,24 +155,18 @@ async def resend_otp(
 # ======================================================
 # ✅ STAFF CREATE (ADMIN ONLY)
 # ======================================================
-@router.post("/staff-create")
-async def staff_create_user(
-    user: UserCreate,
+
+@router.post("/create")
+async def create_pharmacist_account(
+    user: PharmacistCreate,
     db: AsyncSession = Depends(get_db),
-    current_user=Depends(require_role("ADMIN")),
+    current_user=Depends(require_role("ADMIN"))
 ):
-    if user.role not in ["pharmacist", "delivery_agent"]:
-        raise HTTPException(
-            status_code=400,
-            detail="Admin can only create Pharmacist or Delivery Agent"
-        )
+    # ✅ Create Pharmacist
+    new_user = await create_pharmacist(db, user)
 
-    # Create user
-    new_user = await create_user(db, user)
-
-    # Generate OTP
+    # ✅ Generate OTP
     otp = generate_otp()
-
     db.add(
         EmailOTP(
             user_id=new_user.id,
@@ -171,18 +176,143 @@ async def staff_create_user(
     )
     await db.commit()
 
-    # ✅ New Template Mail
+    # ✅ Send OTP Email
     send_auth_otp_email(
         email=new_user.email,
-        name=new_user.full_name or user.role.replace("_", " ").title(),
+        name=new_user.full_name,
         otp=otp
     )
 
     return {
-        "message": f"{user.role} account created successfully",
+        "message": "Pharmacist account created successfully",
         "status": "NOT VERIFIED",
-        "role": user.role
+        "role": "pharmacist",
+        "license_no": new_user.license_no,
+        "shop_no": new_user.shop_no
     }
+
+@router.delete("/delete/{pharmacist_id}")
+async def delete_pharmacist_account(
+    pharmacist_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("ADMIN"))
+):
+    # 🔍 Find pharmacist
+    result = await db.execute(
+        select(User).where(
+            User.id == pharmacist_id,
+            User.role == "pharmacist"
+        )
+    )
+    pharmacist = result.scalar_one_or_none()
+
+    if not pharmacist:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Pharmacist not found"
+        )
+
+    # ✅ STEP 1: Delete OTPs first (VERY IMPORTANT)
+    await db.execute(
+        delete(EmailOTP).where(EmailOTP.user_id == pharmacist_id)
+    )
+
+    # ✅ STEP 2: Delete user
+    await db.delete(pharmacist)
+
+    await db.commit()
+
+    return {
+        "message": "Pharmacist deleted successfully",
+        "pharmacist_id": pharmacist_id
+    }
+
+@router.post("/create-Delivery")
+async def create_delivery_agent_account(
+    user: DeliveryAgentCreate,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("ADMIN"))
+):
+    new_user = await create_delivery_agent(db, user)
+
+    otp = generate_otp()
+    db.add(
+        EmailOTP(
+            user_id=new_user.id,
+            otp=otp,
+            expires_at=EmailOTP.expiry_time()
+        )
+    )
+    await db.commit()
+
+    send_auth_otp_email(
+        email=new_user.email,
+        name=new_user.full_name,
+        otp=otp
+    )
+
+    return {
+        "message": "Delivery agent account created successfully",
+        "status": "NOT VERIFIED",
+        "role": "delivery_agent",
+        "vehicle_number": new_user.vehicle_number,
+        "vehicle_type": new_user.vehicle_type,  # ✅ NEW
+        "rc_no": new_user.rc_no                 # ✅ NEW
+    }
+
+@router.put("/update-delivery/{user_id}")
+async def update_delivery_agent_account(
+    user_id: int,
+    user_data: DeliveryAgentUpdate,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("delivery_agent"))
+):
+    updated_user = await update_delivery_agent(db, user_id, user_data)
+
+    return {
+        "message": "Delivery agent updated successfully",
+        "id": updated_user.id,
+        "full_name": updated_user.full_name,
+        "email": updated_user.email,
+        "phone": updated_user.phone,
+        "vehicle_number": updated_user.vehicle_number,
+        "vehicle_type": updated_user.vehicle_type,
+        "rc_no": updated_user.rc_no,
+        "driving_license_no": updated_user.driving_license_no
+    }
+
+
+@router.delete("/delete-delivery/{user_id}")
+async def delete_delivery_agent_account(
+    user_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("ADMIN"))
+):
+    # 🔹 check user
+    result = await db.execute(
+        select(User).where(
+            User.id == user_id,
+            User.role == "delivery_agent"
+        )
+    )
+    user = result.scalar_one_or_none()
+
+    if not user:
+        raise HTTPException(status_code=404, detail="Delivery agent not found")
+
+    # ✅ STEP 1: delete OTPs first (VERY IMPORTANT)
+    await db.execute(
+        delete(EmailOTP).where(EmailOTP.user_id == user_id)
+    )
+
+    # ✅ STEP 2: now delete user
+    await db.delete(user)
+
+    # ✅ STEP 3: commit once
+    await db.commit()
+
+    return {"message": "Delivery agent deleted successfully"}
+
 
 
 # ======================================================

@@ -37,9 +37,14 @@ class Order(Base):
     order_number = Column(String(20), unique=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     subtotal = Column(Float, default=0)
-    tax = Column(Float, default=0)
+    cgst = Column(Float, default=0)
+    sgst = Column(Float, default=0)
+    handling_fee = Column(Float, default=10)
+    delivery_fee = Column(Float, default=0)
+    surge_fee = Column(Float, default=0)
     total = Column(Float, default=0)
-
+    promo_code_id = Column(Integer, ForeignKey("promo_codes.id"), nullable=True)
+    payment_id = Column(String(50), nullable=True, unique=True)
     payment_method = Column(String, nullable=True)
     payment_status = Column(String, default="PENDING")
     status = Column(

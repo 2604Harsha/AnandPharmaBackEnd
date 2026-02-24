@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import func, select, cast, Date
+from sqlalchemy import and_, func, select, cast, Date
 
+from utils.mappers import map_delivery_agent
+from schemas.user import DeliveryAgentListResponse, ListResponse, UserListResponse, UserResponse
 from core.database import get_db
 from core.rbac import require_role
 
@@ -205,3 +207,204 @@ async def live_delivery_agents(
         }
         for id, name, lat, lng, last_at in result.all()
     ]
+
+@router.get("/users/total", response_model=ListResponse)
+async def get_total_users(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    # 🔢 Count only role=user
+    count_result = await db.execute(
+        select(func.count()).where(User.role == "user")
+    )
+    total_users = count_result.scalar()
+
+    # 📋 Data only role=user
+    users_result = await db.execute(
+        select(User).where(User.role == "user")
+    )
+    users = users_result.scalars().all()
+
+    return {
+        "count": total_users,
+        "users": users
+    }
+
+@router.get("/users/active", response_model=ListResponse)
+async def get_active_users(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    # 🔢 Count active + role=user
+    count_result = await db.execute(
+        select(func.count()).where(
+            and_(
+                User.is_active == True,
+                User.role == "user"
+            )
+        )
+    )
+    active_users = count_result.scalar()
+
+    # 📋 Data active + role=user
+    users_result = await db.execute(
+        select(User).where(
+            and_(
+                User.is_active == True,
+                User.role == "user"
+            )
+        )
+    )
+    users = users_result.scalars().all()
+
+    return {
+        "count": active_users,
+        "users": users
+    }
+
+@router.get("/pharmacies/total", response_model=UserListResponse)
+async def get_total_pharmacies(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    # 🔢 Count role=pharmacist
+    count_result = await db.execute(
+        select(func.count()).where(User.role == "pharmacist")
+    )
+    total_pharmacists = count_result.scalar()
+
+    # 📋 Data role=pharmacist
+    users_result = await db.execute(
+        select(User).where(User.role == "pharmacist")
+    )
+    pharmacists = users_result.scalars().all()
+
+    return {
+        "count": total_pharmacists,
+        "users": pharmacists
+    }
+
+@router.get("/pharmacies/online", response_model=list[UserResponse])
+async def get_online_pharmacies(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    result = await db.execute(
+        select(User).where(
+            and_(
+                User.role == "pharmacist",
+                User.is_online == True
+            )
+        )
+    )
+    pharmacists = result.scalars().all()
+    return pharmacists
+
+
+@router.get("/pharmacies/offline", response_model=UserListResponse)
+async def get_offline_pharmacies(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    # 🔢 Count offline pharmacists
+    count_result = await db.execute(
+        select(func.count()).where(
+            and_(
+                User.role == "pharmacist",
+                User.is_online == False
+            )
+        )
+    )
+    offline_count = count_result.scalar()
+
+    # 📋 Offline pharmacists data
+    data_result = await db.execute(
+        select(User).where(
+            and_(
+                User.role == "pharmacist",
+                User.is_online == False
+            )
+        )
+    )
+    pharmacists = data_result.scalars().all()
+
+    return {
+        "count": offline_count,
+        "users": pharmacists
+    }
+
+@router.get("/delivery-agents/total", response_model=DeliveryAgentListResponse)
+async def get_total_delivery_agents(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    # count
+    count_result = await db.execute(
+        select(func.count()).where(User.role == "delivery_agent")
+    )
+    total_count = count_result.scalar()
+
+    # data
+    result = await db.execute(
+        select(User).where(User.role == "delivery_agent")
+    )
+    agents = result.scalars().all()
+
+    return {
+        "count": total_count,
+        "users": [map_delivery_agent(u) for u in agents]
+    }
+
+@router.get("/delivery-agents/online", response_model=DeliveryAgentListResponse)
+async def get_online_delivery_agents(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    count_result = await db.execute(
+        select(func.count()).where(
+            and_(
+                User.role == "delivery_agent",
+                User.is_online == True
+            )
+        )
+    )
+    online_count = count_result.scalar()
+
+    result = await db.execute(
+        select(User).where(
+            and_(
+                User.role == "delivery_agent",
+                User.is_online == True
+            )
+        )
+    )
+    agents = result.scalars().all()
+
+    return {
+        "count": online_count,
+        "users": [map_delivery_agent(u) for u in agents]
+    }
+
+@router.get("/delivery-agents/offline", response_model=DeliveryAgentListResponse)
+async def get_offline_delivery_agents(db: AsyncSession = Depends(get_db),admin=Depends(require_role("admin"))):
+    count_result = await db.execute(
+        select(func.count()).where(
+            and_(
+                User.role == "delivery_agent",
+                User.is_online == False
+            )
+        )
+    )
+    offline_count = count_result.scalar()
+
+    result = await db.execute(
+        select(User).where(
+            and_(
+                User.role == "delivery_agent",
+                User.is_online == False
+            )
+        )
+    )
+    agents = result.scalars().all()
+
+    return {
+        "count": offline_count,
+        "users": [map_delivery_agent(u) for u in agents]
+    }
+
+
+# ======================================================
+# GET ALL ORDERS (ADMIN)
+# ======================================================
+@router.get("/orders")
+async def get_all_orders(
+    db: AsyncSession = Depends(get_db),
+    current_user=Depends(require_role("admin"))
+):
+    result = await db.execute(select(Order).order_by(Order.id.desc()))
+    orders = result.scalars().all()
+
+    return {
+        "total": len(orders),
+        "orders": orders
+    }
+

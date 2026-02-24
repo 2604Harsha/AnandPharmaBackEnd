@@ -1,9 +1,8 @@
-
 import razorpay
 import uuid
 import asyncio
 from core.config import settings
-
+from utils.payment_id import generate_payment_id   # ✅ import
 
 class RazorpayService:
     def __init__(self):
@@ -23,6 +22,8 @@ class RazorpayService:
         )
 
     async def create_order(self, amount: float, currency: str = "INR"):
+        payment_id = generate_payment_id()   # ✅ your unique payment id
+
         # ✅ MOCK RESPONSE
         if settings.PAYMENT_MODE != "RAZORPAY":
             return {
@@ -30,18 +31,25 @@ class RazorpayService:
                 "amount": int(amount * 100),
                 "currency": currency,
                 "status": "created",
+                "payment_id": payment_id,    # ✅ add here
             }
 
         loop = asyncio.get_running_loop()
-        return await loop.run_in_executor(
+
+        order = await loop.run_in_executor(
             None,
             self.client.order.create,
             {
                 "amount": int(amount * 100),
                 "currency": currency,
                 "payment_capture": 1,
+                "receipt": payment_id,   # ✅ store in Razorpay itself
             },
         )
+
+        # ✅ return to frontend
+        order["payment_id"] = payment_id
+        return order
 
     async def verify_payment(self, order_id, payment_id, signature):
         # ✅ MOCK VERIFY ALWAYS SUCCESS
@@ -50,7 +58,7 @@ class RazorpayService:
 
         data = {
             "razorpay_order_id": order_id,
-            "razorpay_test_id": payment_id,
+            "razorpay_key_id": payment_id,   # ✅ FIXED KEY NAME
             "razorpay_signature": signature,
         }
 
@@ -63,6 +71,4 @@ class RazorpayService:
 
         return True
 
-
 razorpay_service = RazorpayService()
-

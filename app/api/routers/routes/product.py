@@ -32,7 +32,7 @@ async def import_products(
     return response
 
 @router.get("/", response_model=list[ProductResponse])
-async def list_products(db: AsyncSession = Depends(get_db),current_user = Depends(require_role("pharmacist","ADMIN"))):
+async def list_products(db: AsyncSession = Depends(get_db)):
     return await get_all_products(db)
 
 @router.get(
@@ -41,8 +41,7 @@ async def list_products(db: AsyncSession = Depends(get_db),current_user = Depend
 )
 async def get_products_by_category(
     category: str,
-    db: AsyncSession = Depends(get_db),
-    current_user = Depends(require_role("user"))
+    db: AsyncSession = Depends(get_db)
 ):
     return await get_products_by_category_service(
         category=category,

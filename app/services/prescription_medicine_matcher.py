@@ -1,90 +1,91 @@
- 
-from sqlalchemy.ext.asyncio import AsyncSession
+import re
 from sqlalchemy import select
 from models.product import Product
-import re
-from typing import List, Dict, Tuple
- 
- 
-# --------------------------------------------------
-# NORMALIZATION
-# --------------------------------------------------
+
+
+# ----------------------------------
+# CLEAN TEXT
+# ----------------------------------
 def normalize(text: str) -> str:
+    if not text:
+        return ""
+
     text = text.lower()
-    text = re.sub(r"\d+\s?(mg|ml|mcg|g)", " ", text)
-    text = re.sub(r"[^a-z\s]", " ", text)
+    text = text.replace("-", " ")
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
- 
- 
-# --------------------------------------------------
-# EXTRACT MEDICINE CANDIDATES FROM PRESCRIPTION
-# --------------------------------------------------
-def extract_medicine_candidates(text: str) -> List[str]:
-    """
-    Extract possible medicine names from OCR text.
-    Uses common prescription patterns.
-    """
-    candidates = set()
-    lines = text.lower().splitlines()
- 
-    MED_HINTS = ["tab", "tablet", "cap", "capsule", "inj", "syrup"]
- 
-    for line in lines:
-        if any(hint in line for hint in MED_HINTS):
-            words = re.findall(r"[a-z]{4,}", line)
-            if words:
-                candidates.add(words[0])  # first meaningful word
- 
-    return list(candidates)
- 
- 
-# --------------------------------------------------
+
+
+# ----------------------------------
 # MAIN MATCH FUNCTION
-# --------------------------------------------------
-async def match_products(
-    db: AsyncSession,
-    extracted_text: str
-) -> Tuple[List[Dict], List[Dict]]:
- 
-    normalized_text = normalize(extracted_text)
- 
-    # 1️⃣ Load all products
-    products = (await db.execute(select(Product))).scalars().all()
- 
+# ----------------------------------
+async def match_products(db, extracted_text: str):
+    """
+    Returns:
+        available_medicines
+        unavailable_medicines
+    """
+
+    clean_text = normalize(extracted_text)
+
+    # 🔹 Load products from DB
+    result = await db.execute(select(Product))
+    products = result.scalars().all()
+
     available = []
-    matched_names = set()
- 
-    # 2️⃣ Match DB medicines
+    unavailable = []
+    matched_product_ids = set()
+
+    # ----------------------------------
+    # STEP 1 — Match available medicines
+    # ----------------------------------
     for product in products:
-        pname = normalize(product.name)
- 
-        if pname and pname in normalized_text:
-            base = pname.split()[0]
-            matched_names.add(base)
+        product_name_norm = normalize(product.name)
+
+        if product_name_norm and product_name_norm in clean_text:
+            matched_product_ids.add(product.id)
 
             available.append({
                 "id": product.id,
                 "name": product.name,
                 "brand": product.brand,
                 "price": product.price,
-                "image": product.image,      
-                "description": product.description  
+                "image": product.image,
+                "description": product.description
             })
- 
-    # 3️⃣ Extract medicine names from prescription
-    candidates = extract_medicine_candidates(extracted_text)
- 
-    # 4️⃣ Anything not matched → unavailable
-    unavailable = []
-    for cand in candidates:
-        if cand not in matched_names:
-            unavailable.append({
-                "name": cand,
-                "image": None,
-                "description": "Not available in store"
-            })
- 
-    return available, unavailable
- 
- 
+
+    # ----------------------------------
+    # STEP 2 — Extract medicine patterns
+    # ----------------------------------
+    # Handles:
+    # paracetamol 500mg
+    # paracetamol 500 mg
+    # paracetamol-500mg
+    # PARACETAMOL 500MG
+
+    medicine_patterns = re.findall(
+        r"[a-zA-Z]+\s*\d+\s*mg",
+        clean_text
+    )
+
+    # normalize extracted medicines
+    medicine_patterns = list(set(normalize(m) for m in medicine_patterns))
+
+    # ----------------------------------
+    # STEP 3 — Find unavailable medicines
+    # ----------------------------------
+    for med in medicine_patterns:
+        found = False
+
+        for product in products:
+            product_name_norm = normalize(product.name)
+
+            if product_name_norm and product_name_norm in med:
+                found = True
+                break
+
+        if not found:
+            unavailable.append(med)
+
+    return available, list(set(unavailable))

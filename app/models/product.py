@@ -1,8 +1,9 @@
 from sqlalchemy import (
-    Column, Integer, String, Float, Text, DateTime, JSON
+    Column, Integer, String, Float, Text, DateTime, JSON, Boolean
 )
 from sqlalchemy.sql import func
 from core.database import Base
+from core.rx_rules import is_prescription_required
 
 
 class Product(Base):
@@ -17,6 +18,15 @@ class Product(Base):
     category = Column(String(100), nullable=False)
     sub_category = Column(String(100))
     brand = Column(String(100))
+
+    # -----------------
+    # RX / OTC Classification
+    # -----------------
+    medicine_class = Column(String(20), default="OTC")  
+    
+    # OTC | RX | DEVICE | WELLNESS
+    requires_prescription = Column(Boolean, default=False)
+
 
     # -----------------
     # Pricing
@@ -52,3 +62,12 @@ class Product(Base):
         DateTime(timezone=True),
         server_default=func.now()
     )
+
+
+    @property
+    def is_rx(self) -> bool:
+        return is_prescription_required(
+            self.category,
+            self.name,
+            self.extra_data
+        )

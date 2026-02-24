@@ -38,4 +38,7 @@ from .refund_request import RefundRequest, RefundRequestStatus, UserRefundReason
 from .pharmacist_notification import PharmacistNotification
 from .email_otp import EmailOTP
 
-
+from .campaign import Campaign, CampaignType
+from .notification import Notification
+from .promo_code import PromoCode
+from .targetting_rule import AudienceTargetingRule

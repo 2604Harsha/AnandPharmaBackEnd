@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
+from models.user import User
 from core.database import get_db
 from core.rbac import require_role
 from models.order import Order, OrderStatus
@@ -67,38 +68,63 @@ async def nearby_orders(
 @router.post("/accept/{order_id}")
 async def accept_order(
     order_id: int,
-    pharmacist_id: int,
-    db: AsyncSession = Depends(get_db)
+    db: AsyncSession = Depends(get_db),
+    pharmacist: User = Depends(require_role("pharmacist")),
 ):
+    # 1️⃣ Fetch pharmacist-order assignment
     result = await db.execute(
         select(PharmacistOrder)
         .where(
             PharmacistOrder.order_id == order_id,
-            PharmacistOrder.pharmacist_id == pharmacist_id
+            PharmacistOrder.pharmacist_id == pharmacist.id
         )
     )
     po = result.scalar_one_or_none()
-
+ 
     if not po:
         raise HTTPException(
             404,
-            detail="This order was not assigned to this pharmacist"
+            "This order is not assigned to you"
         )
-
+ 
+    # 2️⃣ Prevent double actions
     if po.status != "PENDING":
         raise HTTPException(
             400,
-            detail=f"Order already {po.status.lower()}"
+            f"Order already {po.status.lower()}"
         )
-
-    po.status = "ACCEPTED"
-
+ 
+    # 3️⃣ Validate order state
     order = await db.get(Order, order_id)
+    if not order:
+        raise HTTPException(404, "Order not found")
+ 
+    if order.status != OrderStatus.WAITING_PHARMACIST:
+        raise HTTPException(
+            400,
+            f"Order cannot be accepted in state {order.status}"
+        )
+ 
+    # 4️⃣ Accept order
+    po.status = "ACCEPTED"
     order.status = OrderStatus.ACCEPTED
-
+ 
+    # 5️⃣ Reject other pharmacists automatically (IMPORTANT)
+    await db.execute(
+        select(PharmacistOrder)
+        .where(
+            PharmacistOrder.order_id == order_id,
+            PharmacistOrder.pharmacist_id != pharmacist.id
+        )
+    )
+ 
     await db.commit()
-
-    return {"message": "Order accepted successfully"}
+ 
+    return {
+        "message": "Order accepted successfully",
+        "order_id": order.id,
+        "order_status": order.status
+    }
 
 # ================================================
 # Reject

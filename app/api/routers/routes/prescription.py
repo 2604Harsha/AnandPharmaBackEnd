@@ -16,10 +16,7 @@ router = APIRouter(prefix="/prescription", tags=["Prescription"])
 UPLOAD_DIR = "uploads/prescriptions"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
  
- 
-# ======================================================
-# UPLOAD PRESCRIPTION
-# ======================================================
+
 @router.post("/upload")
 async def upload_prescription(
     file: UploadFile = File(...),
@@ -28,10 +25,11 @@ async def upload_prescription(
 ):
     # 1️⃣ Save file
     file_path = f"{UPLOAD_DIR}/{file.filename}"
+
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    # 2️⃣ OCR
+    # 2️⃣ OCR extract
     extracted_text = extract_text(file_path)
 
     # 3️⃣ Doctor validation
@@ -40,7 +38,7 @@ async def upload_prescription(
     status = (
         PrescriptionStatus.approved
         if has_details
-        else PrescriptionStatus.pharmacist_review
+        else PrescriptionStatus.rejected
     )
 
     # 4️⃣ Save prescription
@@ -54,21 +52,20 @@ async def upload_prescription(
     await db.commit()
     await db.refresh(prescription)
 
-    # 5️⃣ Match medicines (always calculate)
-    available, unavailable = await match_products(db, extracted_text)
-
-    # 🔒 Pharmacist review
-    if status == PrescriptionStatus.pharmacist_review:
+    # ❌ If rejected → stop
+    if status == PrescriptionStatus.rejected:
         return {
             "status": status,
             "prescription_id": prescription.id,
             "prescription_image": f"/{prescription.file_path}",
             "available_medicines": [],
-            "unavailable_medicines": unavailable,
-            "message": "Sent for pharmacist review (doctor details missing)"
+            "unavailable_medicines": [],
+            "message": "Prescription rejected (doctor details missing)"
         }
 
-    # ✅ Auto approved
+    # ✅ If approved → match medicines
+    available, unavailable = await match_products(db, extracted_text)
+
     return {
         "status": status,
         "prescription_id": prescription.id,
@@ -77,6 +74,7 @@ async def upload_prescription(
         "unavailable_medicines": unavailable,
         "message": "Prescription auto-approved"
     }
+
  
  
 # ======================================================

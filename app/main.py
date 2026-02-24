@@ -5,7 +5,6 @@ from api.routers.routes import auth
 from api.routers.routes.product import router as product_router
 from api.routers.routes.cart import router as cart 
 from api.routers.routes.prescription import router as prescription
-from api.routers.routes.pharmcist import router as pharmcist
 from api.routers.routes.checkout_router import router as checkout_router
 from api.routers.routes.billing import router as billing
 from api.routers.routes.payment import router as payment
@@ -20,6 +19,15 @@ from api.routers.routes.pharmacist_notification_router import router as pharmaci
 from api.routers.routes.pharmacist_refund_router import router as pharmacist_refund_router
 from api.routers.routes.admin_analytics import router as admin_analytics
 from api.routers.routes.chat import router as chat 
+from api.routers.routes.profile_router import router as profile_router
+from api.routers.routes.delivery_agent_profile import router as delivery_agent_profile
+from api.routers.routes.admin_surge import router as admin_surge
+from api.routers.routes.campaign_router import router as campaign_router
+from api.routers.routes.notification_router import router as notification_router
+from api.routers.routes.promo_router import router as promo_router
+from api.routers.routes.targeting_rule import router as targeting_rule
+from api.routers.routes.marketing_router import router as marketing_router
+
 from core.database import Base, engine
 
 app = FastAPI(title="Anand Pharma API")
@@ -29,10 +37,12 @@ async def jwt_middleware(request: Request, call_next):
     return await auth_middleware(request, call_next)
 
 app.include_router(auth.router)
+app.include_router(profile_router)
 app.include_router(pharmacist_profile)
+app.include_router(delivery_agent_profile)
+app.include_router(admin_surge)
 app.include_router(product_router)
 app.include_router(prescription)
-app.include_router(pharmcist)
 app.include_router(cart)
 app.include_router(checkout_router)
 app.include_router(billing)
@@ -46,6 +56,11 @@ app.include_router(user_refund_router)
 app.include_router(pharmacist_notification_router)
 app.include_router(pharmacist_refund_router)
 app.include_router(admin_analytics)
+app.include_router(campaign_router)
+app.include_router(notification_router)
+app.include_router(promo_router)
+app.include_router(targeting_rule)
+app.include_router(marketing_router)
 app.include_router(chat)
 
 

@@ -1,8 +1,10 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, delete
 from sqlalchemy.orm import selectinload
-from fastapi import Depends
+from fastapi import HTTPException
 
+from models.prescription import Prescription, PrescriptionStatus
+from models.prescription_item import PrescriptionItem
 from models.cart import Cart
 from models.cart_item import CartItem
 from models.product import Product
@@ -32,7 +34,7 @@ async def get_or_create_cart(db: AsyncSession, user_id: int):
 
 
 # ======================================================
-# ADD TO CART
+# ADD TO CART (RX SAFE ✅)
 # ======================================================
 async def add_to_cart(
     db: AsyncSession,
@@ -40,8 +42,49 @@ async def add_to_cart(
     product_id: int,
     quantity: int
 ):
+    # 🔍 Load product
+    product = await db.get(Product, product_id)
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+
+    # 🔒 RX ENFORCEMENT
+    if product.is_rx:
+        # ✅ Get ANY approved prescription (since no user_id column)
+        pres_result = await db.execute(
+            select(Prescription)
+            .where(Prescription.status == PrescriptionStatus.approved)
+            .order_by(Prescription.id.desc())
+        )
+        prescription = pres_result.scalars().first()
+
+        if not prescription:
+            raise HTTPException(
+                status_code=400,
+                detail="Prescription required for this medicine"
+            )
+
+        # 🔍 Check medicine exists in prescription
+        items_result = await db.execute(
+            select(PrescriptionItem.medicine_name)
+            .where(
+                PrescriptionItem.prescription_id == prescription.id
+            )
+        )
+
+        allowed_medicines = {
+            name.lower() for (name,) in items_result.all()
+        }
+
+        if product.name.lower() not in allowed_medicines:
+            raise HTTPException(
+                status_code=400,
+                detail=f"{product.name} is not present in uploaded prescription"
+            )
+
+    # 🛒 Get or create cart
     cart = await get_or_create_cart(db, user_id)
 
+    # ➕ Add or update cart item
     result = await db.execute(
         select(CartItem).where(
             CartItem.cart_id == cart.id,
@@ -102,12 +145,10 @@ async def update_cart_item(
     if quantity <= 0:
         await db.delete(cart_item)
     else:
-        # ✅ INCREASE quantity instead of replace
         cart_item.quantity += quantity
 
     await db.commit()
     return True
-
 
 
 # ======================================================
@@ -137,7 +178,7 @@ async def delete_cart_item(
 
 
 # ======================================================
-# CHECKOUT SUMMARY (FIXED)
+# CHECKOUT SUMMARY (NO RX LOGIC HERE ❌)
 # ======================================================
 async def get_checkout_summary(db: AsyncSession, user_id: int):
     result = await db.execute(
@@ -148,7 +189,6 @@ async def get_checkout_summary(db: AsyncSession, user_id: int):
     )
 
     items_db = result.scalars().all()
-
     if not items_db:
         return None
 
@@ -156,14 +196,13 @@ async def get_checkout_summary(db: AsyncSession, user_id: int):
     items = []
 
     for item in items_db:
-        price = item.product.price
-        subtotal += price * item.quantity
-
+        subtotal += item.product.price * item.quantity
         items.append({
             "product_id": item.product_id,
             "name": item.product.name,
             "quantity": item.quantity,
-            "price": price
+            "price": item.product.price,
+            "requires_prescription": item.product.is_rx
         })
 
     tax = round(subtotal * TAX_PERCENT / 100, 2)
@@ -192,7 +231,7 @@ async def save_shipping_address(db: AsyncSession, user_id: int, data):
 
 
 # ======================================================
-# PLACE ORDER (FIXED)
+# PLACE ORDER (RX ALREADY VALIDATED BEFORE)
 # ======================================================
 async def place_order(db: AsyncSession, user_id: int):
     result = await db.execute(
@@ -203,13 +242,13 @@ async def place_order(db: AsyncSession, user_id: int):
     )
 
     items_db = result.scalars().all()
-
     if not items_db:
         raise Exception("Cart is empty")
 
-    subtotal = 0
-    for item in items_db:
-        subtotal += item.product.price * item.quantity
+    subtotal = sum(
+        item.product.price * item.quantity
+        for item in items_db
+    )
 
     tax = round(subtotal * TAX_PERCENT / 100, 2)
     total = round(subtotal + tax, 2)
@@ -237,10 +276,11 @@ async def place_order(db: AsyncSession, user_id: int):
 
     # 🔥 Clear cart
     await db.execute(
-        delete(CartItem).where(CartItem.cart_id == items_db[0].cart_id)
+        delete(CartItem).where(
+            CartItem.cart_id == items_db[0].cart_id
+        )
     )
 
     await db.commit()
     await db.refresh(order)
-
     return order

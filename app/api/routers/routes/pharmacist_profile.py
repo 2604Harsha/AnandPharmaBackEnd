@@ -70,6 +70,12 @@ async def set_store_address(
     lat, lng = geocode_address(full_address)
  
     current_user.store_name = store_name
+    current_user.store_shop_no = shop_no
+    current_user.store_street = street
+    current_user.store_city = city
+    current_user.store_landmark = landmark
+    current_user.store_state = state.value
+    current_user.store_pincode = pincode
     current_user.store_address = full_address
     current_user.last_latitude = lat
     current_user.last_longitude = lng

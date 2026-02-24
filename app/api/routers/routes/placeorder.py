@@ -21,22 +21,28 @@ async def place_order(
     if not order:
         raise HTTPException(404, "Order not found")
  
-    # ✅ FIX: check payment_status, not order.status
+    # ❌ Payment must be successful
     if order.payment_status != "SUCCESS":
         raise HTTPException(400, "Payment not completed")
  
-    # Optional safety check
-    if order.status not in [
-        OrderStatus.WAITING_PHARMACIST,
-        OrderStatus.PAID
-    ]:
-        raise HTTPException(400, "Order cannot be placed in current state")
+    # ❌ Cancelled orders cannot be placed
+    if order.status == OrderStatus.CANCELLED:
+        raise HTTPException(400, "Order is cancelled")
  
-    order.status = OrderStatus.ACCEPTED
+    # ✅ ALREADY PLACED → JUST RETURN STATUS (KEY FIX 🔥)
+    if order.status != OrderStatus.PAID:
+        return {
+            "message": "Order already placed",
+            "order_id": order.id,
+            "order_status": order.status
+        }
+ 
+    # ✅ FIRST-TIME PLACE
+    order.status = OrderStatus.WAITING_PHARMACIST
     await db.commit()
  
     return {
-        "message": "Order confirmed",
+        "message": "Order placed successfully. Waiting for pharmacist approval.",
         "order_id": order.id,
         "order_status": order.status
     }

@@ -1,26 +1,35 @@
-import re
- 
+
+DOCTOR_KEYWORDS = [
+    "dr.",
+    "doctor",
+    "mbbs",
+    "md",
+    "bams",
+    "bhms",
+    "consultant"
+]
+
+
 def has_doctor_details(text: str) -> bool:
     """
-    Returns True ONLY if doctor/hospital/stamp info is present
+    NEW RULE:
+
+    REQUIRED:
+    ✅ Doctor identity must exist
+
+    OPTIONAL (ignored):
+    ❌ Hospital
+    ❌ Stamp
+    ❌ Signature
+
+    If doctor missing → reject
     """
+
     if not text:
         return False
- 
-    patterns = [
-        r"\bdr\b",
-        r"\bdoctor\b",
-        r"\bhospital\b",
-        r"\bclinic\b",
-        r"\breg\.?\s?no\b",
-        r"\bmedical council\b",
-        r"\bstamp\b"
-    ]
- 
-    for p in patterns:
-        if re.search(p, text, re.IGNORECASE):
-            return True
- 
-    return False
- 
- 
+
+    text_lower = text.lower()
+
+    doctor_found = any(keyword in text_lower for keyword in DOCTOR_KEYWORDS)
+
+    return doctor_found

@@ -9,14 +9,15 @@ from models.order import Order
 from models.order_item import OrderItem
 
 router = APIRouter(prefix="/billing", tags=["Billing"])
+
+
 @router.get("/{order_id}")
 async def get_billing_page(
     order_id: int,
     db: AsyncSession = Depends(get_db),
-    current_user = Depends(require_role("user"))
+    user=Depends(require_role("user")),
 ):
     order = await db.get(Order, order_id)
-
     if not order:
         raise HTTPException(404, "Order not found")
 
@@ -27,18 +28,15 @@ async def get_billing_page(
     return {
         "order_id": order.id,
         "subtotal": order.subtotal,
-        "tax": order.tax,
+        "cgst": order.cgst,
+        "sgst": order.sgst,
+        "handling_fee": order.handling_fee,
+        "delivery_fee": order.delivery_fee,
+        "surge_fee": order.surge_fee,
         "total": order.total,
-        "payment_methods": [
-            "CARD",
-            "UPI"
-        ],
+        "payment_methods": ["CARD", "UPI"],
         "items": [
-            {
-                "name": i.product_name,
-                "qty": i.quantity,
-                "price": i.price
-            }
+            {"name": i.product_name, "qty": i.quantity, "price": i.price}
             for i in items.scalars()
-        ]
+        ],
     }

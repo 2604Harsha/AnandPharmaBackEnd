@@ -44,6 +44,7 @@ class Order(Base):
     surge_fee = Column(Float, default=0)
     total = Column(Float, default=0)
     promo_code_id = Column(Integer, ForeignKey("promo_codes.id"), nullable=True)
+    pharmacy_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     payment_id = Column(String(50), nullable=True, unique=True)
     payment_method = Column(String, nullable=True)
     payment_status = Column(String, default="PENDING")
@@ -63,11 +64,22 @@ class Order(Base):
         back_populates="order",
         cascade="all, delete-orphan"
     )
-    user = relationship("User", back_populates="orders")
+
+    user = relationship(
+    "User",
+    foreign_keys=[user_id],
+    back_populates="customer_orders"
+    )
 
     address = relationship(
         "ShippingAddress",
         back_populates="order",
         uselist=False,
         cascade="all, delete-orphan"
+    )
+
+    pharmacy = relationship(
+        "User",
+        foreign_keys=[pharmacy_id],
+        back_populates="pharmacy_orders"
     )

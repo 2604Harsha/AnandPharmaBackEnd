@@ -9,10 +9,10 @@ from core.database import Base
 # ================= ENUMS =================
 
 class CampaignType(str, enum.Enum):
-    discount_offer = "discount_offer"
-    free_delivery = "free_delivery"
-    cashback = "cashback"
-    buy_one_get_one = "buy_one_get_one"
+    discount_offer = "Discount Offer"
+    free_delivery = "Free Delivery"
+    cashback = "Cashback"
+    buy_one_get_one = "Buy One Get One"
 
 
 class DiscountType(str, enum.Enum):
@@ -21,10 +21,10 @@ class DiscountType(str, enum.Enum):
 
 
 class AudienceType(str, enum.Enum):
-    all_users = "all_users"
-    new_users = "new_users"
-    returning_customers = "returning_customers"
-    prescription_users = "prescription_users"
+    all_users = "All Users"
+    new_users = "New Users"
+    returning_customers = "Returning Customers"
+    prescription_users = "Prescription Users"
 
 
 class LaunchType(str, enum.Enum):

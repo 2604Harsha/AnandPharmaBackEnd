@@ -157,7 +157,7 @@ async def reject_order(
     return {"message": "Order rejected. Notified next pharmasist"}
 
 @router.post("/pack/{order_id}")
-async def pack_order(order_id: int, db: AsyncSession = Depends(get_db)):
+async def pack_order(order_id: int, db: AsyncSession = Depends(get_db),pharmacist=Depends(require_role("pharmacist"))):
     order = await db.get(Order, order_id)
 
     if order.status != OrderStatus.ACCEPTED:
@@ -171,7 +171,7 @@ async def pack_order(order_id: int, db: AsyncSession = Depends(get_db)):
 # =======================================
 
 @router.post("/ready/{order_id}")
-async def ready_for_delivery(order_id: int, db: AsyncSession = Depends(get_db)):
+async def ready_for_delivery(order_id: int, db: AsyncSession = Depends(get_db),pharmacist=Depends(require_role("pharmacist"))):
     order = await db.get(Order, order_id)
 
     if order.status != OrderStatus.PACKED:

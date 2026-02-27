@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional, Dict, Any
+from typing import List, Optional, Dict, Any
 from datetime import datetime
 
 
@@ -76,5 +76,13 @@ class ProductUpdate(BaseModel):
     warnings: Optional[str] = None
     extra_data: Optional[Dict[str, Any]] = None
 
+class ProductListResponse(BaseModel):
+    page: int
+    limit: int
+    total: int
+    total_pages: int
+    data: List[ProductResponse]
+
     class Config:
         from_attributes = True
+

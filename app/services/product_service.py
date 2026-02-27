@@ -50,9 +50,32 @@ async def create_product(db: AsyncSession, data: ProductCreate):
 # -------------------------------
 # Get All Products
 # -------------------------------
-async def get_all_products(db: AsyncSession):
-    result = await db.execute(select(Product))
-    return result.scalars().all()
+async def get_all_products(
+    db: AsyncSession,
+    page: int = 1,
+    limit: int = 10,
+):
+    offset = (page - 1) * limit
+
+    result = await db.execute(
+        select(Product)
+        .offset(offset)
+        .limit(limit)
+    )
+    products = result.scalars().all()
+
+    total_result = await db.execute(
+        select(func.count()).select_from(Product)
+    )
+    total = total_result.scalar()
+
+    return {
+        "page": page,
+        "limit": limit,
+        "total": total,
+        "total_pages": (total + limit - 1) // limit,
+        "data": products,
+    }
 
 
 # -------------------------------

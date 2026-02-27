@@ -1,5 +1,6 @@
 from sqlalchemy import Column, DateTime, Float, Integer, String, Boolean
 from sqlalchemy.orm import relationship
+from models.order import Order
 from core.database import Base
 
 
@@ -31,8 +32,6 @@ class User(Base):
     is_active = Column(Boolean, default=False)
     is_verified = Column(Boolean, default=False)
 
-    orders = relationship("Order", back_populates="user")
-
     # 📍 Stable pharmacist store location
     store_name = Column(String, nullable=True)
     store_shop_no = Column(String, nullable=True)
@@ -54,3 +53,17 @@ class User(Base):
     last_longitude = Column(Float, nullable=True)
     last_location_at = Column(DateTime(timezone=True), nullable=True)
     is_online = Column(Boolean, default=False)
+    
+    # 👤 Orders placed by customer
+    customer_orders = relationship(
+       "Order",
+       foreign_keys=[Order.user_id],
+       back_populates="user"
+    )
+
+    # 🏥 Orders received by pharmacy
+    pharmacy_orders = relationship(
+      "Order",
+      foreign_keys=[Order.pharmacy_id],
+      back_populates="pharmacy"
+    )

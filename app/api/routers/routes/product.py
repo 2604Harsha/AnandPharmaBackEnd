@@ -1,12 +1,12 @@
 import os
 import shutil
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from core.rbac import require_role
 from core.database import get_db
 from models.product import Product
-from schemas.product import ProductCreate, ProductDetailResponse, ProductResponse, ProductUpdate, ProductUserResponse
+from schemas.product import ProductCreate, ProductDetailResponse, ProductListResponse, ProductResponse, ProductUpdate, ProductUserResponse
 from services.product_service import delete_product_service, get_all_products, get_product_details_service, get_products_by_category_service, import_products_from_excel, update_product_service
 
 router = APIRouter(prefix="/products", tags=["Products"])
@@ -31,9 +31,13 @@ async def import_products(
 
     return response
 
-@router.get("/", response_model=list[ProductResponse])
-async def list_products(db: AsyncSession = Depends(get_db)):
-    return await get_all_products(db)
+@router.get("/", response_model=ProductListResponse)
+async def list_products(
+    page: int = Query(1, ge=1),
+    limit: int = Query(10, le=100),
+    db: AsyncSession = Depends(get_db),
+):
+    return await get_all_products(db, page, limit)
 
 @router.get(
     "/category/{category}",

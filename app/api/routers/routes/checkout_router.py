@@ -1,7 +1,10 @@
+from encodings import aliases
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
+from models.user import User
 from core.database import get_db
 from core.redis import get_redis
 from core.rbac import require_role
@@ -139,139 +142,113 @@ async def move_cart_to_order(
 # ======================================================
 # SAVE ADDRESS → APPLY DELIVERY & SURGE
 # ======================================================
+
 @router.post("/address")
-
 async def save_shipping_address(
-
     payload: ShippingAddressCreate,
-
     db: AsyncSession = Depends(get_db),
-
     redis=Depends(get_redis),
-
     user=Depends(require_role("user")),
-
 ):
-
     # 🔒 RX FINAL VALIDATION
-
     result = await db.execute(
-
         select(CartItem, Product)
-
         .join(Cart, CartItem.cart_id == Cart.id)
-
         .join(Product, CartItem.product_id == Product.id)
-
         .where(Cart.user_id == user.id)
-
     )
- 
+
     rows = result.all()
-
     rx_products = [product for _, product in rows if product.is_rx]
- 
+
     if rx_products:
-
         # ✅ GET LATEST APPROVED PRESCRIPTION
-
         pres_q = await db.execute(
-
             select(Prescription)
-
             .where(Prescription.status == PrescriptionStatus.approved)
-
             .order_by(Prescription.id.desc())
-
         )
 
         prescription = pres_q.scalars().first()
- 
+
         if not prescription:
-
             raise HTTPException(
-
                 400,
-
-                "Prescription medicines present. Upload & get prescription approved."
-
+                "Prescription medicines present. Upload & get prescription approved.",
             )
- 
+
         # 🔍 ALLOWED MEDICINES FROM PRESCRIPTION
-
         items_q = await db.execute(
-
             select(PrescriptionItem.medicine_name)
-
             .where(PrescriptionItem.prescription_id == prescription.id)
-
         )
 
         allowed = {m[0].lower() for m in items_q.all()}
- 
+
         for product in rx_products:
-
             if product.name.lower() not in allowed:
-
                 raise HTTPException(
-
                     400,
-
-                    f"{product.name} not covered in uploaded prescription"
-
+                    f"{product.name} not covered in uploaded prescription",
                 )
- 
-    # ✅ CREATE ORDER
 
-    order = Order(user_id=user.id, status=OrderStatus.PENDING)
-
-    db.add(order)
-
-    await db.flush()
- 
-    full_address = f"{payload.address}, {payload.city}, {payload.pincode}"
-
-    lat, lng = geocode_address(full_address)
- 
-    db.add(
-
-        OrderAddress(
-
-            order_id=order.id,
-
-            address=payload.address,
-
-            city=payload.city,
-
-            pincode=payload.pincode,
-
-            latitude=lat,
-
-            longitude=lng,
-
-        )
-
+    # =========================================================
+    # ✅ STEP 1 — FIND ACTIVE PHARMACY (FIX FOR NOT NULL ERROR)
+    # =========================================================
+    pharmacy_result = await db.execute(
+        select(User.id)
+        .where(User.role == "pharmacist", User.is_active == True)
+        .limit(1)
     )
- 
+
+    pharmacy_id = pharmacy_result.scalar()
+
+    if not pharmacy_id:
+        raise HTTPException(400, "No active pharmacy available")
+
+    # =========================================================
+    # ✅ STEP 2 — CREATE ORDER (WITH pharmacy_id)
+    # =========================================================
+    order = Order(
+        user_id=user.id,
+        pharmacy_id=pharmacy_id,  # 🔥 REQUIRED
+        status=OrderStatus.PENDING,
+    )
+    db.add(order)
+    await db.flush()
+
+    # =========================================================
+    # ✅ STEP 3 — GEOCODE ADDRESS
+    # =========================================================
+    full_address = f"{payload.address}, {payload.city}, {payload.pincode}"
+    lat, lng = geocode_address(full_address)
+
+    db.add(
+        OrderAddress(
+            order_id=order.id,
+            address=payload.address,
+            city=payload.city,
+            pincode=payload.pincode,
+            latitude=lat,
+            longitude=lng,
+        )
+    )
+
+    # =========================================================
+    # ✅ STEP 4 — MOVE CART → ORDER
+    # =========================================================
     await move_cart_to_order(db, order.id, user.id, redis)
 
     await db.commit()
- 
+
     return {
-
         "order_id": order.id,
-
         "status": order.status,
-
+        "pharmacy_id": pharmacy_id,
         "latitude": lat,
-
         "longitude": lng,
-
-        "message": "Delivery & surge charges applied. Order ready for review 🧾"
-
+        "message": "Delivery & surge charges applied. Order ready for review 🧾",
     }
-
- 
 
 # ======================================================
 # 🧾 REVIEW ORDER (FINAL BILL)
@@ -308,3 +285,5 @@ async def review_order(
             for i in items.scalars()
         ]
     }
+
+

@@ -27,6 +27,7 @@ from api.routers.routes.notification_router import router as notification_router
 from api.routers.routes.promo_router import router as promo_router
 from api.routers.routes.targeting_rule import router as targeting_rule
 from api.routers.routes.marketing_router import router as marketing_router
+from api.routers.routes.admin_financial import router as admin_financial
 
 from core.database import Base, engine
 
@@ -56,6 +57,7 @@ app.include_router(user_refund_router)
 app.include_router(pharmacist_notification_router)
 app.include_router(pharmacist_refund_router)
 app.include_router(admin_analytics)
+app.include_router(admin_financial)
 app.include_router(campaign_router)
 app.include_router(notification_router)
 app.include_router(promo_router)

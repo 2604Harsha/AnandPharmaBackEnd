@@ -7,8 +7,10 @@ from encodings import aliases
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import and_, func, select, cast, Date, text
-from sqlalchemy.orm import aliased
+from sqlalchemy.orm import aliased, joinedload
 
+from models.prescription import Prescription, PrescriptionStatus
+from models.refund_request import RefundRequest, RefundRequestStatus
 from models.product import Product
 from utils.mappers import map_delivery_agent
 from schemas.user import DeliveryAgentListResponse, ListResponse, UserListResponse, UserResponse
@@ -128,6 +130,27 @@ async def monthly_revenue(
         }
         for month, revenue in result.all()
     ]
+
+# ======================================================
+# 💰 TOTAL PLATFORM REVENUE (ALL TIME)
+# ======================================================
+@router.get("/revenue/total")
+async def total_platform_revenue(
+    db: AsyncSession = Depends(get_db),
+    admin=Depends(require_role("admin"))
+):
+    result = await db.execute(
+        select(func.coalesce(func.sum(Order.total), 0))
+        .where(Order.status == OrderStatus.DELIVERED)
+    )
+
+    total_revenue = result.scalar()
+
+    return {
+        "title": "Total Platform Revenue",
+        "total_revenue": float(total_revenue),
+        "currency": "INR"
+    }
 
 # ======================================================
 # 5️⃣ DELIVERY STATUS ANALYTICS
@@ -412,14 +435,44 @@ async def get_all_orders(
     db: AsyncSession = Depends(get_db),
     current_user=Depends(require_role("admin"))
 ):
-    result = await db.execute(select(Order).order_by(Order.id.desc()))
-    orders = result.scalars().all()
+
+    Customer = aliased(User)
+    Pharmacy = aliased(User)
+    DeliveryAgent = aliased(User)
+
+    result = await db.execute(
+        select(
+            Order,
+            Customer.full_name.label("user_name"),
+            Pharmacy.pharmacy_name.label("pharmacy_name"),
+            DeliveryAgent.full_name.label("delivery_agent_name")
+        )
+        .outerjoin(Customer, Order.user_id == Customer.id)
+        .outerjoin(Pharmacy, Order.pharmacy_id == Pharmacy.id)
+        .outerjoin(DeliveryAgent, Order.delivery_agent_id == DeliveryAgent.id)
+        .order_by(Order.id.desc())
+    )
+
+    rows = result.all()
+
+    order_list = []
+
+    for order, user_name, pharmacy_name, delivery_agent_name in rows:
+        order_list.append({
+            "order_id": order.id,
+            "status": order.status,
+            "total_amount": order.total,
+            "created_at": order.created_at,
+
+            "user_name": user_name,
+            "pharmacy_name": pharmacy_name,
+            "delivery_agent_name": delivery_agent_name
+        })
 
     return {
-        "total": len(orders),
-        "orders": orders
+        "total": len(order_list),
+        "orders": order_list
     }
-
 # ======================================================
 # 📊 MONTHLY REVENUE vs ORDERS (Dashboard Chart)
 # ======================================================
@@ -846,3 +899,114 @@ async def city_performance(
     data.sort(key=lambda x: x["total_revenue"], reverse=True)
 
     return data
+
+# ======================================================
+# ⚠️ LOW STOCK PRODUCTS
+# ======================================================
+@router.get("/products/low-stock")
+async def low_stock_products(
+    db: AsyncSession = Depends(get_db),
+    admin=Depends(require_role("admin"))
+):
+    result = await db.execute(
+        select(Product).where(
+            and_(
+                Product.stock <= 10,
+                Product.stock > 0
+            )
+        )
+        .order_by(Product.stock.asc())
+    )
+
+    products = result.scalars().all()
+
+    return {
+        "count": len(products),
+        "products": products
+    }
+
+# ======================================================
+# ❌ OUT OF STOCK PRODUCTS
+# ======================================================
+@router.get("/products/out-of-stock")
+async def out_of_stock_products(
+    db: AsyncSession = Depends(get_db),
+    admin=Depends(require_role("admin"))
+):
+    result = await db.execute(
+        select(Product).where(Product.stock == 0)
+    )
+
+    products = result.scalars().all()
+
+    return {
+        "count": len(products),
+        "products": products
+    }
+
+
+# ======================================================
+# 💰 REFUNDS SUMMARY + DETAILS
+# ======================================================
+@router.get("/refunds")
+async def get_refunds(
+    db: AsyncSession = Depends(get_db),
+    admin=Depends(require_role("admin"))
+):
+
+    Customer = aliased(User)
+    Pharmacy = aliased(User)
+
+    result = await db.execute(
+        select(
+            RefundRequest.id.label("refund_id"),
+            RefundRequest.order_id,
+            RefundRequest.created_at,
+            RefundRequest.status,
+            Order.order_number,
+            Customer.full_name.label("customer_name"),
+            Pharmacy.pharmacy_name.label("pharmacy_name"),
+        )
+        .join(Order, Order.id == RefundRequest.order_id)
+        .outerjoin(Customer, Customer.id == RefundRequest.user_id)
+        .outerjoin(Pharmacy, Pharmacy.id == Order.pharmacy_id)
+        .where(RefundRequest.status == RefundRequestStatus.approved)
+        .order_by(RefundRequest.created_at.desc())
+    )
+
+    rows = result.all()
+
+    refunds = []
+
+    for r in rows:
+        refunds.append({
+            "refund_id": r.refund_id,
+            "order_id": r.order_id,
+            "customer_name": r.customer_name,
+            "pharmacy_name": r.pharmacy_name,
+            "status": r.status.value if r.status else None,
+            "requested_at": r.created_at
+        })
+
+    return {
+        "total_refunds": len(refunds),
+        "refunds": refunds
+    }
+
+
+@router.get("/count")
+async def get_prescription_count(
+    db: AsyncSession = Depends(get_db),
+    admin=Depends(require_role("admin"))
+):
+
+    result = await db.execute(
+        select(func.count(Prescription.id))
+    )
+
+    total_prescriptions = result.scalar()
+
+    return {
+        "title": "Total Prescriptions",
+        "count": total_prescriptions
+    }

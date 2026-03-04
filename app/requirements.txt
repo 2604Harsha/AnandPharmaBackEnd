@@ -19,3 +19,5 @@ pytesseract
 opencv-python
 redis
 reportlab
+httpx
+pytz

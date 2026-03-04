@@ -76,6 +76,9 @@ class ProductUpdate(BaseModel):
     warnings: Optional[str] = None
     extra_data: Optional[Dict[str, Any]] = None
 
+    class Config:
+        from_attributes = True
+
 class ProductListResponse(BaseModel):
     page: int
     limit: int
@@ -83,6 +86,4 @@ class ProductListResponse(BaseModel):
     total_pages: int
     data: List[ProductResponse]
 
-    class Config:
-        from_attributes = True
 

@@ -1,33 +1,28 @@
 from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Enum
 import enum
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from core.database import Base
 from sqlalchemy.sql import func
 
+
 class OrderStatus(str, enum.Enum):
-    # 🛒 Checkout & Payment
-    PENDING = "PENDING"                      # Address saved, payment not started
+
+    PENDING = "PENDING"
     PAYMENT_INITIATED = "PAYMENT_INITIATED"
     PAID = "PAID"
 
-    # 🧑‍⚕️ Pharmacist Flow (NEW)
-    WAITING_PHARMACIST = "WAITING_PHARMACIST"   # Notification sent
-    ACCEPTED = "ACCEPTED"                       # Pharmacist accepted
-    PACKED = "PACKED"                           # Medicines packed
-    READY_FOR_DELIVERY = "READY_FOR_DELIVERY"   # Ready to assign delivery
+    WAITING_PHARMACIST = "WAITING_PHARMACIST"
+    ACCEPTED = "ACCEPTED"
+    PACKED = "PACKED"
+    READY_FOR_DELIVERY = "READY_FOR_DELIVERY"
 
-    # 🚴 Delivery
     OUT_FOR_DELIVERY = "OUT_FOR_DELIVERY"
     DELIVERED = "DELIVERED"
 
-    # ❌ Other
     CANCELLED = "CANCELLED"
-
-    # ⚠️ Backward compatibility (keep if already used)
     CONFIRMED = "CONFIRMED"
-
-
+    DISPUTED = "DISPUTED"
+    REFUNDED = "REFUNDED"
 
 
 class Order(Base):
@@ -35,7 +30,11 @@ class Order(Base):
 
     id = Column(Integer, primary_key=True)
     order_number = Column(String(20), unique=True, index=True)
+
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    pharmacy_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    delivery_agent_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+
     subtotal = Column(Float, default=0)
     cgst = Column(Float, default=0)
     sgst = Column(Float, default=0)
@@ -43,11 +42,13 @@ class Order(Base):
     delivery_fee = Column(Float, default=0)
     surge_fee = Column(Float, default=0)
     total = Column(Float, default=0)
+
     promo_code_id = Column(Integer, ForeignKey("promo_codes.id"), nullable=True)
-    pharmacy_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+
     payment_id = Column(String(50), nullable=True, unique=True)
     payment_method = Column(String, nullable=True)
     payment_status = Column(String, default="PENDING")
+
     status = Column(
         Enum(OrderStatus),
         default=OrderStatus.PENDING,
@@ -59,27 +60,37 @@ class Order(Base):
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+    # 📦 Order Items
     items = relationship(
         "OrderItem",
         back_populates="order",
         cascade="all, delete-orphan"
     )
 
+    # 👤 Customer
     user = relationship(
-    "User",
-    foreign_keys=[user_id],
-    back_populates="customer_orders"
+        "User",
+        foreign_keys=[user_id],
+        back_populates="customer_orders"
     )
 
+    # 🏥 Pharmacy
+    pharmacy = relationship(
+        "User",
+        foreign_keys=[pharmacy_id],
+        back_populates="pharmacy_orders"
+    )
+
+    # 🚴 Delivery Agent
+    delivery_agent = relationship(
+        "User",
+        foreign_keys=[delivery_agent_id]
+    )
+
+    # 📍 Shipping Address
     address = relationship(
         "ShippingAddress",
         back_populates="order",
         uselist=False,
         cascade="all, delete-orphan"
-    )
-
-    pharmacy = relationship(
-        "User",
-        foreign_keys=[pharmacy_id],
-        back_populates="pharmacy_orders"
     )

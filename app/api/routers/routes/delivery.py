@@ -45,6 +45,7 @@ async def assign_delivery(
     redis=Depends(get_redis),
     admin=Depends(require_role("admin", "pharmacist")),
 ):
+
     order = await db.get(Order, order_id)
     if not order:
         raise HTTPException(404, "Order not found")
@@ -73,6 +74,9 @@ async def assign_delivery(
 
     agent = await db.get(User, int(agent_id))
 
+    if not agent:
+        raise HTTPException(404, "Delivery agent not found")
+
     eta = calculate_eta(
         agent.last_latitude,
         agent.last_longitude,
@@ -89,8 +93,11 @@ async def assign_delivery(
     )
 
     db.add(delivery)
+    order.delivery_agent_id = agent.id
     order.status = OrderStatus.OUT_FOR_DELIVERY
+
     await db.commit()
+    await db.refresh(delivery)
 
     await redis.hset(
         f"delivery:order:{order.id}",
@@ -99,9 +106,11 @@ async def assign_delivery(
 
     send_delivery_assignment_email(agent.email, order.id)
 
-    return {"message": "Delivery assigned", "agent_id": agent.id, "eta": eta}
-
-
+    return {
+        "message": "Delivery assigned",
+        "agent_id": agent.id,
+        "eta": eta
+    }
 # ======================================================
 # 📦 PICKUP CONFIRMATION (DELIVERY AGENT)
 # ======================================================

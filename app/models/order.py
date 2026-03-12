@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Enum
 import enum
 from sqlalchemy.orm import relationship
@@ -57,7 +59,11 @@ class Order(Base):
 
     razorpay_order_id = Column(String, nullable=True)
     razorpay_payment_id = Column(String, nullable=True)
-
+    updated_at = Column(
+    DateTime,
+    default=datetime.utcnow,
+    onupdate=datetime.utcnow
+    )
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # 📦 Order Items

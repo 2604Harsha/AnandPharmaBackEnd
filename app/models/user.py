@@ -17,6 +17,7 @@ class User(Base):
     pharmacy_name = Column(String, nullable=True)
     license_no = Column(String, nullable=True)
     shop_no = Column(String, nullable=True)
+    gst_number = Column(String, nullable=True)
 
     vehicle_number = Column(String, nullable=True)
     vehicle_type = Column(String, nullable=True)

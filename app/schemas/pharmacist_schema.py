@@ -11,6 +11,7 @@ class PharmacistCreate(BaseModel):
     # ✅ pharmacist extra
     pharmacy_name: str = Field(min_length=3)
     license_no: str = Field(min_length=5)
+    gst_no: str = Field(min_length=15)
     shop_no: str = Field(min_length=1)
 
     @model_validator(mode="after")

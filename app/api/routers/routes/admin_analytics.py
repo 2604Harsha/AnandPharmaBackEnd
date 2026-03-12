@@ -440,38 +440,44 @@ async def get_all_orders(
     Pharmacy = aliased(User)
     DeliveryAgent = aliased(User)
 
-    result = await db.execute(
+    stmt = (
         select(
-            Order,
+            Order.id,
+            Order.status,
+            Order.total,
+            Order.created_at,
+
             Customer.full_name.label("user_name"),
             Pharmacy.pharmacy_name.label("pharmacy_name"),
             DeliveryAgent.full_name.label("delivery_agent_name")
         )
+        .select_from(Order)
         .outerjoin(Customer, Order.user_id == Customer.id)
         .outerjoin(Pharmacy, Order.pharmacy_id == Pharmacy.id)
         .outerjoin(DeliveryAgent, Order.delivery_agent_id == DeliveryAgent.id)
         .order_by(Order.id.desc())
     )
 
+    result = await db.execute(stmt)
     rows = result.all()
 
-    order_list = []
+    orders = []
 
-    for order, user_name, pharmacy_name, delivery_agent_name in rows:
-        order_list.append({
-            "order_id": order.id,
-            "status": order.status,
-            "total_amount": order.total,
-            "created_at": order.created_at,
+    for row in rows:
+        orders.append({
+            "order_id": row.id,
+            "status": row.status,
+            "total_amount": row.total,
+            "created_at": row.created_at,
 
-            "user_name": user_name,
-            "pharmacy_name": pharmacy_name,
-            "delivery_agent_name": delivery_agent_name
+            "user_name": row.user_name,
+            "pharmacy_name": row.pharmacy_name,
+            "delivery_agent_name": row.delivery_agent_name
         })
 
     return {
-        "total": len(order_list),
-        "orders": order_list
+        "total": len(orders),
+        "orders": orders
     }
 # ======================================================
 # 📊 MONTHLY REVENUE vs ORDERS (Dashboard Chart)

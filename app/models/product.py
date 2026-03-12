@@ -1,5 +1,5 @@
 from sqlalchemy import (
-    Column, Integer, String, Float, Text, DateTime, JSON, Boolean
+    Column, Date, ForeignKey, Integer, String, Float, Text, DateTime, JSON, Boolean
 )
 from sqlalchemy.sql import func
 from core.database import Base
@@ -15,6 +15,7 @@ class Product(Base):
     # Basic Info
     # -----------------
     name = Column(String(255), nullable=False)
+    pharmacy_id = Column(Integer, ForeignKey("users.id"))
     category = Column(String(100), nullable=False)
     sub_category = Column(String(100))
     brand = Column(String(100))

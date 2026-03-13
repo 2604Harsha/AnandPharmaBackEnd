@@ -369,7 +369,11 @@ async def login(
         key="access_token",
         value=token,
         httponly=True,
-        samesite="lax"
+        samesite="none",      # For cross-origin with ngrok
+        secure=True,          # Required when samesite="none"
+        domain=None,          # Let browser handle domain
+        max_age=86400,        # 1 day in seconds (24 hours * 60 minutes * 60 seconds)
+        path="/"              # Cookie available for all paths
     )
 
     return {

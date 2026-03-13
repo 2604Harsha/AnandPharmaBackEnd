@@ -1,10 +1,15 @@
+
 import pytesseract
 from PIL import Image
 import pdfplumber
-from docx import Document   # ✅ FIXED IMPORT
+from docx import Document
+
+# ✅ Tell pytesseract where tesseract.exe is installed
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
 def extract_text(file_path: str) -> str:
+
     # 🖼 IMAGE
     if file_path.lower().endswith((".jpg", ".jpeg", ".png")):
         return pytesseract.image_to_string(Image.open(file_path), lang="eng")
@@ -23,4 +28,3 @@ def extract_text(file_path: str) -> str:
         return "\n".join(p.text for p in doc.paragraphs)
 
     return ""
-

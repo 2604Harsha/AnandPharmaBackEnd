@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Request
 from fastapi.openapi.utils import get_openapi
 from middleware.middleware import auth_middleware
+from fastapi.middleware.cors import CORSMiddleware
+
 from api.routers.routes import auth
 from api.routers.routes.product import router as product_router
 from api.routers.routes.cart import router as cart 
@@ -36,9 +38,36 @@ from core.database import Base, engine
 
 app = FastAPI(title="Anand Pharma API")
 
+origins = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+    "https://anand-shipping-hvbr.vercel.appd/"
+    
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    
+)
+
+
+
 @app.middleware("http")
 async def jwt_middleware(request: Request, call_next):
-    return await auth_middleware(request, call_next)
+
+    # 🔥 VERY IMPORTANT: Allow preflight requests
+    if request.method == "OPTIONS":
+        return await call_next(request)
+
+    response = await auth_middleware(request, call_next)
+    return response
+
 
 app.include_router(auth.router)
 app.include_router(profile_router)

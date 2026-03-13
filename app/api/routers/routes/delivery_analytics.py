@@ -119,48 +119,47 @@ async def delivery_list(
     db: AsyncSession = Depends(get_db),
     admin=Depends(require_role("pharmacist"))
 ):
-
+ 
     customer = aliased(User)
     rider = aliased(User)
-
+ 
     result = await db.execute(
         select(
             Delivery.id,
             Delivery.delivery_user_id,
             Delivery.status,
             Delivery.picked_at,
-
+ 
             Order.id.label("order_id"),
             Order.total,
             Order.delivery_fee,
-
+ 
             OrderAddress.address,
-
+ 
             customer.full_name.label("customer_name"),
             rider.full_name.label("rider_name"),
             rider.phone.label("rider_phone")
         )
         .select_from(Delivery)
-
+ 
         .join(Order, Delivery.order_id == Order.id)
-
-        # FIXED
+ 
         .outerjoin(OrderAddress, OrderAddress.order_id == Order.id)
-
+ 
         .join(customer, customer.id == Order.user_id)
-
+ 
         .outerjoin(rider, rider.id == Delivery.delivery_user_id)
-
-        .where(Delivery.status != "DELIVERED")
-
+ 
+        # ❌ removed status filter
+ 
         .order_by(Delivery.id.desc())
         .limit(limit)
     )
-
+ 
     rows = result.all()
-
+ 
     deliveries = []
-
+ 
     for r in rows:
         deliveries.append({
             "delivery_id": f"DEL{r.id:04}",
@@ -173,5 +172,5 @@ async def delivery_list(
             "delivery_partner": r.rider_name,
             "phone": r.rider_phone
         })
-
+ 
     return deliveries

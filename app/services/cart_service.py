@@ -137,18 +137,23 @@ async def update_cart_item(
             CartItem.product_id == product_id
         )
     )
+ 
     cart_item = result.scalar_one_or_none()
-
+ 
     if not cart_item:
         return False
-
+ 
+    # remove item if quantity 0
     if quantity <= 0:
         await db.delete(cart_item)
+ 
+    # set exact quantity
     else:
-        cart_item.quantity += quantity
-
+        cart_item.quantity = quantity
+ 
     await db.commit()
     return True
+ 
 
 
 # ======================================================

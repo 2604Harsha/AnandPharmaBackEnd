@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from jose import jwt, JWTError
 from core.config import settings
 
-PUBLIC_PATHS = ["/docs","/chatbot", "/openapi.json","/auth/register", "/auth/login","/auth/verify-otp", "/auth/resend-otp","/auth/forgot-password","/auth/reset-password","/prescription/upload"]
+PUBLIC_PATHS = ["/docs","/chatbot", "/openapi.json","/auth/register", "/auth/login","/auth/verify-otp", "/auth/resend-otp","/auth/forgot-password","/auth/reset-password","/prescription/upload","/products"]
 
 async def auth_middleware(request: Request, call_next):
     if any(request.url.path.startswith(p) for p in PUBLIC_PATHS):
